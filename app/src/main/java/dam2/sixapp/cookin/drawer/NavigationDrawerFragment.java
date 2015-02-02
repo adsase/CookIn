@@ -211,12 +211,14 @@ public class NavigationDrawerFragment extends Fragment {
         }
         switch(position){
             case 0:
-                startActivity(new Intent(this.getActivity(), MainActivity.class));
+                //startActivity(new Intent(this.getActivity(), MainActivity.class));
                 break;
             case 1:
-                startActivity(new Intent(this.getActivity(), Wololo.class));
+                //startActivity(new Intent(this.getActivity(), Wololo.class));
                 break;
             case 2:
+                startActivity(new Intent(this.getActivity(), MainActivity.class));
+                //getActivity().finish();
                 break;
         }
     }
