@@ -1,5 +1,6 @@
 package dam2.sixapp.cookin.drawer;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
 import android.support.v7.app.ActionBar;
@@ -23,6 +24,8 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import dam2.sixapp.cookin.R;
+import dam2.sixapp.cookin.swipeTabs.userMain.MainActivity;
+import dam2.sixapp.cookin.swipeTabs.userMain.Wololo;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.
@@ -205,6 +208,16 @@ public class NavigationDrawerFragment extends Fragment {
         }
         if (mCallbacks != null) {
             mCallbacks.onNavigationDrawerItemSelected(position);
+        }
+        switch(position){
+            case 0:
+                startActivity(new Intent(this.getActivity(), MainActivity.class));
+                break;
+            case 1:
+                startActivity(new Intent(this.getActivity(), Wololo.class));
+                break;
+            case 2:
+                break;
         }
     }
 

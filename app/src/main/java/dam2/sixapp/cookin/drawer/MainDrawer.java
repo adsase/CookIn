@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
+import android.widget.AdapterView;
 
 import dam2.sixapp.cookin.R;
 import dam2.sixapp.cookin.swipeTabs.userMain.MainActivity;
@@ -51,17 +52,10 @@ public class MainDrawer extends ActionBarActivity
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
-        //FragmentManager fragmentManager = getSupportFragmentManager();
-        //fragmentManager.beginTransaction().replace(R.id.container, PlaceholderFragment.newInstance(position + 1)).commit();
-        switch(position){
-            case 0:
-                break;
-            case 2:
-                startActivity(new Intent(this,Wololo.class));
-                break;
-            case 3:
-                break;
-        }
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                .commit();
     }
 
     public void onSectionAttached(int number) {
