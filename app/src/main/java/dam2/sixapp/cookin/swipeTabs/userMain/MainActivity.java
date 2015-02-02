@@ -191,8 +191,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
             // Show 3 total pages.
             return 4;
         }
-
-        @Override
+        /*@Override
         public CharSequence getPageTitle(int position) {
             Locale l = Locale.getDefault();
             switch (position) {
@@ -206,7 +205,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
                     return getString(R.string.premium).toUpperCase(l);
             }
             return null;
-        }
+        }*/
 
         @Override
         public Fragment getItem(int index) {
