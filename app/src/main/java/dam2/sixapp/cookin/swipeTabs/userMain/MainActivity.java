@@ -2,6 +2,8 @@ package dam2.sixapp.cookin.swipeTabs.userMain;
 
 import java.util.Locale;
 
+import android.content.Context;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -10,11 +12,14 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
 import dam2.sixapp.cookin.R;
 import dam2.sixapp.cookin.drawer.NavigationDrawerFragment;
@@ -37,15 +42,21 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
      * The {@link ViewPager} that will host the section contents.
      */
     ViewPager mViewPager;
+    //private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        moveDrawerToTop();
+        //mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        //setSupportActionBar(mToolbar);
+
         // Set up the action bar.
         final ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
@@ -54,6 +65,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+
 
         // When swiping between different sections, select the corresponding
         // tab. We can also use ActionBar.Tab#select() to do this if we have
@@ -84,8 +96,36 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
                             .setTabListener(this));
         }
          **/
+
     }
 
+    private void moveDrawerToTop(){
+        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        DrawerLayout drawer = (DrawerLayout) inflater.inflate(R.layout.decor,null);
+
+        ViewGroup decor = (ViewGroup) getWindow().getDecorView();
+        View child = decor.getChildAt(0);
+        decor.removeView(child);
+        //LinearLayout container = (LinearLayout) drawer.findViewById(R.id.drawer_content);
+        //container.addView(child, 0);
+        FrameLayout container = (FrameLayout) drawer.findViewById(R.id.container);
+        container.addView(child);
+        drawer.findViewById(R.id.navigation_drawer).setPadding(0, getStatusBarHeight(), 0, 0);
+
+        //FrameLayout container = (FrameLayout) drawer.findViewById(R.id.container);
+        //container.addView(child);
+
+        decor.addView(drawer);
+    }
+
+    public int getStatusBarHeight(){
+        int result = 0;
+        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0){
+            result = getResources().getDimensionPixelSize(resourceId);
+        }
+        return result;
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

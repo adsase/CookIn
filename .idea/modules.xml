@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/prueba.iml" filepath="$PROJECT_DIR$/prueba.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pruebaCookIn.iml" filepath="$PROJECT_DIR$/pruebaCookIn.iml" />
     </modules>
   </component>
 </project>
