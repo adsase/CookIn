@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,7 +20,7 @@ public class Avanzadas extends android.support.v4.app.Fragment implements Adapte
 
     Spinner spDuracionAvanzadas,spDificultadAvanzadas,spZonaAvanzadas,spAlimentoAvanzadas,spTipoAlimentoAvanzadas;
     ArrayAdapter<CharSequence> adaptadorAlimentosAvanzada;
-    TextView tvAvanzadas;
+    Button bntAvanzadas;
     String uno,dos,tres,cuatro,cinco;
 
 
@@ -36,8 +37,8 @@ public class Avanzadas extends android.support.v4.app.Fragment implements Adapte
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        tvAvanzadas=(TextView)getView().findViewById(R.id.textViewBuscar);
-        tvAvanzadas.setOnClickListener(this);
+        bntAvanzadas=(Button)getView().findViewById(R.id.bntAvanzadas);
+        bntAvanzadas.setOnClickListener(this);
 
         //----------------------------Spinners Categorias Avanzadas-------------------------------------------------------------------------
 
@@ -159,9 +160,9 @@ public class Avanzadas extends android.support.v4.app.Fragment implements Adapte
     @Override
     public void onClick(View v) {
 
-        if(v.getId()==R.id.textViewBuscar){
+        if(v.getId()==R.id.bntAvanzadas){
 
-            Toast.makeText(getActivity(),"Pasara a la activity de la lista de recetas",Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getActivity(),"Pasara a la activity de la lista de recetas",Toast.LENGTH_SHORT).show();
 
             Intent i = new Intent(getActivity(), ListaRecetas.class);
             i.putExtra("duracion",uno.toString());
