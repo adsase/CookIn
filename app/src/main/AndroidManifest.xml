@@ -30,8 +30,8 @@
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".swipeTabs.userMain.Wololo"
-            android:label="Wololo" >
+            android:name=".swipeTabs.userMain.Recetas"
+            android:label="@string/recipes" >
         </activity>
     </application>
 

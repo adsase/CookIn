@@ -25,7 +25,7 @@ import android.widget.Toast;
 
 import dam2.sixapp.cookin.R;
 import dam2.sixapp.cookin.swipeTabs.userMain.MainActivity;
-import dam2.sixapp.cookin.swipeTabs.userMain.Wololo;
+import dam2.sixapp.cookin.swipeTabs.userMain.Recetas;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.
@@ -59,7 +59,7 @@ public class NavigationDrawerFragment extends Fragment {
     private ListView mDrawerListView;
     private View mFragmentContainerView;
 
-    private int mCurrentSelectedPosition = 0;
+    private int mCurrentSelectedPosition;
     private boolean mFromSavedInstanceState;
     private boolean mUserLearnedDrawer;
 
@@ -81,7 +81,7 @@ public class NavigationDrawerFragment extends Fragment {
         }
 
         // Select either the default item (0) or the last selected item.
-        selectItem(mCurrentSelectedPosition);
+        //selectItem(mCurrentSelectedPosition);
     }
 
     @Override
@@ -116,7 +116,7 @@ public class NavigationDrawerFragment extends Fragment {
                         getString(R.string.settings),
                         getString(R.string.about),
                 }));
-        mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
+        //mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
         return mDrawerListView;
     }
 
@@ -211,13 +211,17 @@ public class NavigationDrawerFragment extends Fragment {
         }
         switch(position){
             case 0:
-                //startActivity(new Intent(this.getActivity(), MainActivity.class));
+                Intent i0 = new Intent(this.getActivity(), MainActivity.class);
+                i0.putExtra("position", position);
+                startActivity(i0);
                 break;
             case 1:
-                //startActivity(new Intent(this.getActivity(), Wololo.class));
+                Intent i1 = new Intent(this.getActivity(), Recetas.class);
+                i1.putExtra("position", position);
+                startActivity(i1);
                 break;
             case 2:
-                startActivity(new Intent(this.getActivity(), MainActivity.class));
+                //startActivity(new Intent(this.getActivity(), MainActivity.class));
                 //getActivity().finish();
                 break;
         }

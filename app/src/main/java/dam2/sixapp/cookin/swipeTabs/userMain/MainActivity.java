@@ -25,7 +25,6 @@ import dam2.sixapp.cookin.R;
 import dam2.sixapp.cookin.drawer.NavigationDrawerFragment;
 import dam2.sixapp.cookin.swipeTabs.userMain.internalTabsFragment.*;
 
-
 public class MainActivity extends ActionBarActivity implements ActionBar.TabListener, NavigationDrawerFragment.NavigationDrawerCallbacks {
 
     /**
@@ -49,7 +48,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        moveDrawerToTop();
+        //moveDrawerToTop();
         //mToolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(mToolbar);
 
@@ -80,8 +79,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
         String[] tabs = getResources().getStringArray(R.array.tab);
         // Añadiendo Tabs
         for (String tab_name : tabs) {
-            actionBar.addTab(actionBar.newTab().setText(tab_name)
-                    .setTabListener(this));
+            actionBar.addTab(actionBar.newTab().setText(tab_name).setTabListener(this));
         }
         /**
         // For each of the sections in the app, add a tab to the action bar.
@@ -191,7 +189,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
             // Show 3 total pages.
             return 4;
         }
-        /*@Override
+        @Override
         public CharSequence getPageTitle(int position) {
             Locale l = Locale.getDefault();
             switch (position) {
@@ -205,7 +203,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
                     return getString(R.string.premium).toUpperCase(l);
             }
             return null;
-        }*/
+        }
 
         @Override
         public Fragment getItem(int index) {
