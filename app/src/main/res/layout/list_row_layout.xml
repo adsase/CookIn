@@ -1,35 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/list_row_selector">
+    android:layout_height="wrap_content">
 
-    <!-- Thumbnail Image -->
-
-    <!-- Separator -->
-
-    <!-- Movie Title -->
-
-    <!-- Rating -->
-
-    <!-- Genre -->
-
-    <!-- Release Year -->
 
     <LinearLayout
         android:id="@+id/llayout"
         android:orientation="horizontal"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:padding="5dp">
+        android:layout_height="90dp"
+        android:padding="5dp"
+        android:background="#e0e0e0"
+        android:baselineAligned="false"
+        android:showDividers="none">
 
         <ImageView
             android:id="@+id/image"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_alignParentLeft="true"
             android:layout_marginRight="8dp"
             android:scaleType="fitXY"
+            android:layout_gravity="center"
             android:background="@drawable/border_img_view" />
 
         <LinearLayout
@@ -51,7 +43,7 @@
                     android:textSize="@dimen/title"
                     android:textStyle="bold"
                     android:text="Titulo"
-                    android:gravity="center" />
+                    android:gravity="center"/>
 
                 <View
                     android:layout_width="fill_parent"
@@ -81,7 +73,7 @@
                             android:text="Duración"
                             android:id="@+id/textView"
                             android:textAlignment="center"
-                            android:gravity="center" />
+                            android:gravity="center"/>
 
                         <TextView
                             android:id="@+id/time"
@@ -93,7 +85,7 @@
                             android:textSize="@dimen/time"
                             android:text="1 H"
                             android:gravity="center"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"/>
 
                     </LinearLayout>
 
@@ -118,7 +110,7 @@
                             android:layout_alignParentBottom="true"
                             android:layout_alignParentRight="true"
                             android:id="@+id/textView2"
-                            android:gravity="center" />
+                            android:gravity="center"/>
 
                         <TextView
                             android:id="@+id/rating"
@@ -129,7 +121,7 @@
                             android:textSize="@dimen/rating"
                             android:text="4.0"
                             android:gravity="center"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"/>
                     </LinearLayout>
 
                     <View
@@ -153,7 +145,7 @@
                             android:layout_alignParentBottom="true"
                             android:layout_alignParentRight="true"
                             android:id="@+id/textView3"
-                            android:gravity="center" />
+                            android:gravity="center"/>
 
                         <TextView
                             android:id="@+id/nationality"
@@ -164,7 +156,7 @@
                             android:textSize="@dimen/nationality"
                             android:text="India"
                             android:gravity="center"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"/>
                     </LinearLayout>
                 </LinearLayout>
 

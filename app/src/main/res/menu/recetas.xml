@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.cooking.Recetas" >
+
+    <item android:id="@+id/action_search"
+        android:icon="@drawable/ic_action_search"
+        android:title="Buscador"
+        app:showAsAction="ifRoom|withText"/>
+    
+</menu>

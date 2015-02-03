@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">prueba</string>
+    <string name="app_name">Cookin</string>
     <string name="g_plus">GooglePlus</string>
     <string name="favoritos">Favoritos</string>
     <string name="pendiente">Pendiente</string>
@@ -30,5 +30,87 @@
         <item>Hechas</item>
         <item>Premium</item>
     </string-array>
+
+    <string-array name="tabRecetas">
+        <item>Categorías</item>
+        <item>Avanzadas</item>
+        <item>Más cocinadas</item>
+        <item>Más valoradas</item>
+    </string-array>
+
+    <!-- Strings del Spinner Categorias -->
+    <string-array name="carnes"> <!-- Array de los diferentes tipos de carnes del Spinner de alimentos -->
+
+        <item>Ternera</item>
+        <item>Pollo</item>
+        <item>Conejo</item>
+        <item>Cerdo</item>
+        <item>Caballo</item>
+    </string-array>
+    <string-array name="pescados"> <!-- Array de los diferentes tipos de pescados del Spinner de alimentos -->
+
+        <item>Salmón</item>
+        <item>Lubina</item>
+    </string-array>
+    <string-array name="verduras"> <!-- Array de los diferentes tipos de verduras del Spinner de alimentos -->
+
+        <item>Zanahoria</item>
+        <item>Cebolla</item>
+    </string-array>
+    <string-array name="pasta"> <!-- Array de los diferentes tipos de pastas del Spinner de alimentos -->
+
+        <item>Normal</item>
+        <item>Vegetariana</item>
+    </string-array>
+    <string-array name="ensaladas"> <!-- Array de los diferentes tipos de ensaladas del Spinner de alimentos -->
+
+        <item>nose</item>
+        <item>nose2</item>
+    </string-array>
+    <string-array name="postres"> <!-- Array de los diferentes tipos de postres del Spinner de alimentos -->
+
+        <item>Chocolate</item>
+        <item>Nata</item>
+    </string-array>
+
+    <!-- Arrays de los Spinners del fragment AVANZADAS -->
+    <string-array name="duracion"> <!-- Array de las duraciones disponibles del Spinner spDuracionAvanzadas -->
+
+        <item>Sin filtro</item>
+        <item> - 15 mins</item>
+        <item>15-30 mins</item>
+        <item>30-60 mins</item>
+        <item>+ 60 mins</item>
+    </string-array>
+    <string-array name="dificultad"> <!-- Array de las duraciones disponibles del Spinner spDificultadAvanzadas -->
+
+        <item>Sin filtro</item>
+        <item>Fácil</item>
+        <item>Media</item>
+        <item>Dificil</item>
+    </string-array>
+    <string-array name="zona"> <!-- Array de las duraciones disponibles del Spinner spZonaAvanzadas -->
+
+        <item>Sin filtro</item>
+        <item>Europa Este</item>
+        <item>Oriental</item>
+        <item>Latina</item>
+        <item>Mediterránea</item>
+        <item>Africána</item>
+        <item>Otros</item>
+    </string-array>
+    <string-array name="alimento"> <!-- Array de las duraciones disponibles del Spinner spAlimentoAvanzadas -->
+
+        <item>.Sin filtro</item>
+        <item>Carnes</item>
+        <item>Pescados</item>
+        <item>Verduras</item>
+        <item>Pasta</item>
+        <item>Ensaladas</item>
+        <item>Postres</item>
+    </string-array>
+
+    <string name="title_activity_tipo_receta">TipoReceta</string>
+    <string name="title_activity_lista_recetas">ListaRecetas</string>
 
 </resources>

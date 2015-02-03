@@ -1,0 +1,16 @@
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#bbbbbb">
+
+        <ExpandableListView
+            android:id="@+id/exListCategorias"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            android:background="#ffffff">
+        </ExpandableListView>
+
+    </LinearLayout>
+

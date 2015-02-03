@@ -1,4 +1,4 @@
-package dam2.sixapp.cookin.database;
+package dam2.sixapp.cookin.database.remote;
 
 import android.app.Activity;
 import android.app.ProgressDialog;

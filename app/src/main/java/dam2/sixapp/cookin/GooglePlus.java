@@ -20,7 +20,7 @@ import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListe
 import com.google.android.gms.plus.Plus;
 import com.google.android.gms.plus.model.people.Person;
 
-import dam2.sixapp.cookin.database.AddUserActivity;
+import dam2.sixapp.cookin.database.remote.AddUserActivity;
 import dam2.sixapp.cookin.swipeTabs.userMain.MainActivity;
 
 public class GooglePlus extends Activity implements
