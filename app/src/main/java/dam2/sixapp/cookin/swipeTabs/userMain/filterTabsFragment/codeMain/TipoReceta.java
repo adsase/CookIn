@@ -28,15 +28,19 @@ import java.util.ArrayList;
 import dam2.sixapp.cookin.R;
 
 
-public class TipoReceta extends Activity implements AdapterView.OnItemSelectedListener {
+public class TipoReceta extends Activity implements AdapterView.OnItemSelectedListener, AdapterView.OnItemClickListener {
 
     private ListView list;
-    TextView txt1;
-    String filtro;
     Spinner spAlimentos;
-    private String[] recetas;
-    String nombre;
+    TextView txt1;
 
+    String nombre;
+    int id;
+    private String[] recetas;
+    private int[] arrayid;
+
+
+    String filtro;
     String conex = "http://cookin.hol.es/android_connect/";
     String php;
     String consulta ="";
@@ -55,6 +59,7 @@ public class TipoReceta extends Activity implements AdapterView.OnItemSelectedLi
         list=(ListView)findViewById(R.id.lista);
         spAlimentos=(Spinner)findViewById(R.id.spinnerTipoAlimentos);
         spAlimentos.setOnItemSelectedListener(this);
+        list.setOnItemClickListener(this);
         txt1.setText("Filtrado por: "+filtro);
 
 
@@ -230,6 +235,18 @@ public class TipoReceta extends Activity implements AdapterView.OnItemSelectedLi
 
     }
 
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+    /*String x = list.getItemAtPosition(position).toString();
+        int idrec = Integer.parseInt(x);
+
+        Intent i = new Intent();
+
+        i.putExtra("id", idrec);
+
+        startActivity(i);*/
+    }
+
 
     private class mostrar extends AsyncTask<String, Integer, Boolean> {
 
@@ -247,16 +264,17 @@ public class TipoReceta extends Activity implements AdapterView.OnItemSelectedLi
                 String respStr = EntityUtils.toString(resp.getEntity());
                 JSONArray respJSON = new JSONArray(respStr);
                 recetas = new String[respJSON.length()];
-
+                arrayid = new int[respJSON.length()];
 
                 for (int i = 0; i < respJSON.length(); i++) {
                     JSONObject obj = respJSON.getJSONObject(i);
 
 
                     nombre = obj.getString("NOMBRE");
-
+                    id = obj.getInt("IDRECETAS");
 
                     recetas[i] = "" + nombre;
+                    arrayid[i] = id;
                 }
             } catch (Exception ex) {
                 Log.e("ServicioRest", "Error!", ex);
