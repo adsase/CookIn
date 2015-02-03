@@ -1,14 +1,6 @@
 apply plugin: 'com.android.application'
 
 android {
-    signingConfigs {
-        config {
-            keyAlias 'Cookin'
-            keyPassword 'sixapp_cookin2015'
-            storeFile file('C:/Users/Jose/.android/keystores/keys.keystore')
-            storePassword 'sixapp_cookin2015'
-        }
-    }
     compileSdkVersion 21
     buildToolsVersion "21.1.2"
     defaultConfig {
@@ -22,7 +14,6 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.config
         }
     }
 }

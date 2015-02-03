@@ -33,6 +33,14 @@
             android:name=".swipeTabs.userMain.Recetas"
             android:label="@string/recipes" >
         </activity>
+        <activity
+            android:name=".swipeTabs.userMain.filterTabsFragment.codeMain.ListaRecetas"
+            android:label="@string/title_activity_main_drawer" >
+        </activity>
+        <activity
+            android:name=".swipeTabs.userMain.filterTabsFragment.codeMain.TipoReceta"
+            android:label="@string/title_activity_tipo_receta" >
+        </activity>
     </application>
 
 </manifest>
