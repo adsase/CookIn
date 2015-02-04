@@ -97,7 +97,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
 
     }
 
-    private void moveDrawerToTop(){
+   /* private void moveDrawerToTop(){
         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         DrawerLayout drawer = (DrawerLayout) inflater.inflate(R.layout.decor,null);
 
@@ -114,7 +114,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
         //container.addView(child);
 
         decor.addView(drawer);
-    }
+    }*/
 
     public int getStatusBarHeight(){
         int result = 0;

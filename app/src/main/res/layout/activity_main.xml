@@ -4,7 +4,8 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="dam2.sixapp.cookin.drawer.MainDrawer">
+    tools:context="dam2.sixapp.cookin.drawer.MainDrawer"
+    android:fitsSystemWindows="true">
 
     <!-- As the main content view, the view below consumes the entire
          space available using match_parent in both dimensions. -->
@@ -32,8 +33,9 @@
         android:id="@+id/navigation_drawer"
         android:layout_width="@dimen/navigation_drawer_width"
         android:layout_height="match_parent"
-        android:layout_gravity="start"
+        android:layout_gravity="start|left"
         android:name="dam2.sixapp.cookin.drawer.NavigationDrawerFragment"
-        tools:layout="@layout/fragment_navigation_drawer" />
+        tools:layout="@layout/fragment_navigation_drawer"
+        android:fitsSystemWindows="true"/>
 
 </android.support.v4.widget.DrawerLayout>

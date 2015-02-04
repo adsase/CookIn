@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Colabora  -->
+
+    <string name="texto_colabora">   Mándenos sus propias recetas en breve podrá encontrarla entre las búsquedas.
+     Rellene los campos que se muestran a continuación y pulse el botón enviar una vez haya finalizado.</string>
+
+    <string name="nom_receta">Nombre receta</string>
+    <string name="ing_receta">Ingrediente principal</string>
+    <string name="dur_receta">Duración receta</string>
+    <string name="loc_receta">Zona geográfica</string>
+    <string name="dif_receta">Dificultad receta</string>
+    <string name="tex_receta">Descripción receta</string>
+    <string name="btn_receta">Enviar</string>
+
+
+
+    <!-- Otros    -->
+
     <string name="app_name">Cookin</string>
     <string name="g_plus">GooglePlus</string>
     <string name="favoritos">Favoritos</string>
