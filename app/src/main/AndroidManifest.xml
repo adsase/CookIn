@@ -43,13 +43,7 @@
         </activity>
         <activity
             android:name=".collaborate.Collaborate"
-            android:label="@string/colabora_main" >
-        </activity>
-        <activity
-            android:name=".recipes.recipeModeSelector"
-            android:label="@string/title_activity_recipe_mode_selector"
-            android:parentActivityName=".swipeTabs.userMain.MainActivity">
-        </activity>
+            android:label="@string/colabora_main"></activity>
     </application>
 
 </manifest>

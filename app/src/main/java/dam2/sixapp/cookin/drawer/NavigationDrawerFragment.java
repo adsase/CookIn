@@ -24,6 +24,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import dam2.sixapp.cookin.R;
+import dam2.sixapp.cookin.about.About;
 import dam2.sixapp.cookin.collaborate.Collaborate;
 import dam2.sixapp.cookin.recipes.recipeModeSelector;
 import dam2.sixapp.cookin.swipeTabs.userMain.MainActivity;
@@ -220,7 +221,21 @@ public class NavigationDrawerFragment extends Fragment {
                 break;
             case 2:
                 startActivity(new Intent(this.getActivity(), Collaborate.class));
-                //getActivity().finish();
+                break;
+            case 3:
+//                startActivity(new Intent(this.getActivity(), Collaborate.class));
+                break;
+            case 4:
+//                startActivity(new Intent(this.getActivity(), Collaborate.class));
+                break;
+            case 5:
+//                startActivity(new Intent(this.getActivity(), Collaborate.class));
+                break;
+            case 6:
+//                startActivity(new Intent(this.getActivity(), Collaborate.class));
+                break;
+            case 7:
+                startActivity(new Intent(this.getActivity(), About.class));
                 break;
             case 3:
                 startActivity(new Intent(this.getActivity(), recipeModeSelector.class));
@@ -228,6 +243,8 @@ public class NavigationDrawerFragment extends Fragment {
                 break;
         }
     }
+
+
 
     @Override
     public void onAttach(Activity activity) {

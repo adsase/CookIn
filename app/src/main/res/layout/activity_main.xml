@@ -6,14 +6,14 @@
     android:layout_height="match_parent"
     tools:context="dam2.sixapp.cookin.drawer.MainDrawer"
     android:fitsSystemWindows="true"
-    android:background="#ffad9b0f">
+    android:background="#424242">
 
     <!-- As the main content view, the view below consumes the entire
          space available using match_parent in both dimensions. -->
     <FrameLayout
         android:id="@+id/container"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <android.support.v4.view.ViewPager
             android:id="@+id/pager"
