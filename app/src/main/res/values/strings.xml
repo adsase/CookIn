@@ -53,36 +53,56 @@
     <!-- Strings del Spinner Categorias -->
     <string-array name="carnes"> <!-- Array de los diferentes tipos de carnes del Spinner de alimentos -->
 
+        <item>Todos</item>
         <item>Ternera</item>
         <item>Pollo</item>
         <item>Conejo</item>
         <item>Cerdo</item>
         <item>Caballo</item>
+        <item>Cordero</item>
+        <item>Pato</item>
+        <item>Gallina</item>
+        <item>Callos</item>
+
+
+
     </string-array>
     <string-array name="pescados"> <!-- Array de los diferentes tipos de pescados del Spinner de alimentos -->
 
+        <item>Todos</item>
+        <item>Bacalao</item>
         <item>Salmón</item>
-        <item>Lubina</item>
+        <item>Sepia</item>
+        <item>Dorada</item>
+        <item>Merluza</item>
+        <item>Pescadilla</item>
+        <item>Atún</item>
     </string-array>
     <string-array name="verduras"> <!-- Array de los diferentes tipos de verduras del Spinner de alimentos -->
-
+        <item>Todos</item>
         <item>Zanahoria</item>
         <item>Cebolla</item>
+        <item>Calabacín</item>
+        <item>Alcachofa</item>
+        <item>Tomates</item>
+
     </string-array>
     <string-array name="pasta"> <!-- Array de los diferentes tipos de pastas del Spinner de alimentos -->
+        <item>Todos</item>
+        <item>Macarrones</item>
+        <item>Espaguetis</item>
+        <item>Lasaña</item>
+        <item>Tallarines</item>
+        <item>Arroz</item>
+        <item>Pizza</item>
 
-        <item>Normal</item>
-        <item>Vegetariana</item>
-    </string-array>
-    <string-array name="ensaladas"> <!-- Array de los diferentes tipos de ensaladas del Spinner de alimentos -->
 
-        <item>nose</item>
-        <item>nose2</item>
+
     </string-array>
     <string-array name="postres"> <!-- Array de los diferentes tipos de postres del Spinner de alimentos -->
 
         <item>Chocolate</item>
-        <item>Nata</item>
+        <item>Mango</item>
     </string-array>
 
     <!-- Arrays de los Spinners del fragment AVANZADAS -->
@@ -105,11 +125,10 @@
     <string-array name="zona"> <!-- Array de las duraciones disponibles del Spinner spZonaAvanzadas -->
 
         <item>Sin filtro</item>
-        <item>Europa Este</item>
         <item>Oriental</item>
         <item>Sudamérica</item>
         <item>Mediterránea</item>
-        <item>Africana</item>
+        <item>África</item>
         <item>Otros</item>
     </string-array>
     <string-array name="alimento"> <!-- Array de las duraciones disponibles del Spinner spAlimentoAvanzadas -->

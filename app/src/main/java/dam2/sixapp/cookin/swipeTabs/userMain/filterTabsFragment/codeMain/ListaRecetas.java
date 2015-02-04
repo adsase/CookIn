@@ -26,9 +26,9 @@ import dam2.sixapp.cookin.R;
 
 public class ListaRecetas extends Activity {//avanzadas
 
-    //TextView textViewDura, textViewDifi, textViewZo, textViewAli;
+    TextView textViewDura, textViewDifi, textViewZo, textViewAli;
     private ListView list;
-    String dura, difi, zona, ali, tipoAli, url, nombre;
+    String duraLink, difiLink, zonaLink, aliLink, tipoAliLink, dura2, difi2, zona2, ali2, tipoAli2, url, nombre;
     private String[] recetas;
 
 
@@ -39,31 +39,16 @@ public class ListaRecetas extends Activity {//avanzadas
         setContentView(R.layout.activity_lista_recetas);
 
         Bundle b = getIntent().getExtras();
-        dura = b.getString("duracion");
-        difi = b.getString("dificultad");
-        zona = b.getString("zona");
-        ali = b.getString("alimento");
-        tipoAli = b.getString("tipoAlimento");
+        duraLink = b.getString("duracionLink");
+        difiLink = b.getString("dificultadLink");
+        zonaLink = b.getString("zonaLink");
+        aliLink = b.getString("alimentoLink");
+        tipoAliLink="";
 
-        /*textViewDura=(TextView)findViewById(R.id.textViewDura);
-        textViewDura.setText("~ "+dura+" mins");
-
-        textViewDifi=(TextView)findViewById(R.id.textViewDifi);
-        textViewDifi.setText(difi);
-
-        textViewZo=(TextView)findViewById(R.id.textViewZo);
-        textViewZo.setText(zona);
-
-        textViewAli=(TextView)findViewById(R.id.textViewAli);
-        textViewAli.setText(ali);*/
 
         list = (ListView)findViewById(R.id.list);
 
-
-        /*textViewTipoAli=(TextView)findViewById(R.id.textViewTipoAli);
-        textViewTipoAli.setText(tipoAli);*/
-
-        url = ("http://cookin.hol.es/android_connect/filtros_avanzados.php?"+ali+"&"+dura+"&"+difi+"&"+zona);
+        url = ("http://cookin.hol.es/android_connect/filtros_avanzados.php?"+tipoAliLink+"&"+duraLink+"&"+difiLink+"&"+zonaLink);
         //Toast.makeText(getApplicationContext(), url, Toast.LENGTH_LONG).show();
 
         mostrar m = new mostrar();
@@ -83,7 +68,7 @@ public class ListaRecetas extends Activity {//avanzadas
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-       //int id = item.getItemId();
+        //int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
         /*if (id == R.id.action_settings) {
@@ -141,10 +126,12 @@ public class ListaRecetas extends Activity {//avanzadas
                 list.setAdapter(adaptador);
 
 
+            }else{
+
+                Toast.makeText(getApplicationContext(),"Error de la Base de Datos", Toast.LENGTH_SHORT).show();
+
             }
         }
 
     }
 }
-
-

@@ -1,5 +1,6 @@
 package dam2.sixapp.cookin.swipeTabs.userMain.filterTabsFragment;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -84,36 +85,41 @@ public class Avanzadas extends android.support.v4.app.Fragment implements Adapte
             case "Sin filtro":
 
                 spTipoAlimentoAvanzadas.setEnabled(false);
-                //Toast.makeText(getActivity(), "Sale", Toast.LENGTH_SHORT).show();
+                spTipoAlimentoAvanzadas.setVisibility(View.GONE);
+                cinco = spAlimentoAvanzadas.getSelectedItem().toString();
+
                 break;
 
-            case "Carnes":
+            case "Carne":
 
                 adaptadorAlimentosAvanzada = ArrayAdapter.createFromResource(getActivity(),R.array.carnes, android.R.layout.simple_spinner_item);
                 adaptadorAlimentosAvanzada.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spTipoAlimentoAvanzadas.setAdapter(adaptadorAlimentosAvanzada);
+                spTipoAlimentoAvanzadas.setVisibility(View.VISIBLE);
                 spTipoAlimentoAvanzadas.setEnabled(true);
-                //Toast.makeText(getActivity(),"Seleccione un tipo de carne",Toast.LENGTH_SHORT).show();
+                cinco = spAlimentoAvanzadas.getSelectedItem().toString();
 
                 break;
 
-            case "Pescados":
+            case "Pescado":
 
                 adaptadorAlimentosAvanzada = ArrayAdapter.createFromResource(getActivity(),R.array.pescados, android.R.layout.simple_spinner_item);
                 adaptadorAlimentosAvanzada.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spTipoAlimentoAvanzadas.setAdapter(adaptadorAlimentosAvanzada);
+                spTipoAlimentoAvanzadas.setVisibility(View.VISIBLE);
                 spTipoAlimentoAvanzadas.setEnabled(true);
-                //Toast.makeText(getActivity(),"Seleccione un tipo de pescado",Toast.LENGTH_SHORT).show();
+                cinco = spAlimentoAvanzadas.getSelectedItem().toString();
 
                 break;
 
-            case "Verduras":
+            case "Vegetal":
 
                 adaptadorAlimentosAvanzada = ArrayAdapter.createFromResource(getActivity(),R.array.verduras, android.R.layout.simple_spinner_item);
                 adaptadorAlimentosAvanzada.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spTipoAlimentoAvanzadas.setAdapter(adaptadorAlimentosAvanzada);
+                spTipoAlimentoAvanzadas.setVisibility(View.VISIBLE);
                 spTipoAlimentoAvanzadas.setEnabled(true);
-                //Toast.makeText(getActivity(),"Seleccione una verdura",Toast.LENGTH_SHORT).show();
+                cinco = spAlimentoAvanzadas.getSelectedItem().toString();
 
                 break;
 
@@ -122,28 +128,21 @@ public class Avanzadas extends android.support.v4.app.Fragment implements Adapte
                 adaptadorAlimentosAvanzada = ArrayAdapter.createFromResource(getActivity(),R.array.pasta, android.R.layout.simple_spinner_item);
                 adaptadorAlimentosAvanzada.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spTipoAlimentoAvanzadas.setAdapter(adaptadorAlimentosAvanzada);
+                spTipoAlimentoAvanzadas.setVisibility(View.VISIBLE);
                 spTipoAlimentoAvanzadas.setEnabled(true);
-                //Toast.makeText(getActivity(),"Seleccione un tipo de pasta",Toast.LENGTH_SHORT).show();
+                cinco = spAlimentoAvanzadas.getSelectedItem().toString();
 
                 break;
 
-            case "Ensaladas":
-
-                adaptadorAlimentosAvanzada = ArrayAdapter.createFromResource(getActivity(),R.array.ensaladas, android.R.layout.simple_spinner_item);
-                adaptadorAlimentosAvanzada.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                spTipoAlimentoAvanzadas.setAdapter(adaptadorAlimentosAvanzada);
-                spTipoAlimentoAvanzadas.setEnabled(true);
-                //Toast.makeText(getActivity(),"Seleccione un tipo de ensalada",Toast.LENGTH_SHORT).show();
-
-                break;
 
             case "Postres":
 
                 adaptadorAlimentosAvanzada = ArrayAdapter.createFromResource(getActivity(),R.array.postres, android.R.layout.simple_spinner_item);
                 adaptadorAlimentosAvanzada.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spTipoAlimentoAvanzadas.setAdapter(adaptadorAlimentosAvanzada);
+                spTipoAlimentoAvanzadas.setVisibility(View.VISIBLE);
                 spTipoAlimentoAvanzadas.setEnabled(true);
-                //Toast.makeText(getActivity(),"Seleccione un postre",Toast.LENGTH_SHORT).show();
+                cinco = spAlimentoAvanzadas.getSelectedItem().toString();
 
                 break;
         }//Fin switch
@@ -170,30 +169,34 @@ public class Avanzadas extends android.support.v4.app.Fragment implements Adapte
             //Toast.makeText(getActivity(),"Pasara a la activity de la lista de recetas",Toast.LENGTH_SHORT).show();
 
 
-           Intent i = new Intent(getActivity(), ListaRecetas.class);
+            Intent i = new Intent(getActivity(), ListaRecetas.class);
 
             if (!uno.toString().equals("Sin filtro")) {
-                i.putExtra("duracion", "dur="+uno.toString());
+                i.putExtra("duracionLink", "dur="+uno.toString());
+                //i.putExtra("duracionString", uno.toString());
             } else {
-                i.putExtra("duracion", "");
+                i.putExtra("duracionLink", "");
             }
 
             if (!dos.toString().equals("Sin filtro")){
-                i.putExtra("dificultad", "dif='"+dos.toString()+"'");
+                i.putExtra("dificultadLink", "dif='"+dos.toString()+"'");
+                //i.putExtra("dificultadString", dos.toString());
             }else {
-                 i.putExtra("dificultad", "");
+                i.putExtra("dificultadLink", "");
             }
 
             if(!tres.toString().equals("Sin filtro")) {
-                i.putExtra("zona", "zon='"+tres.toString()+"'");
+                i.putExtra("zonaLink", "zon='"+tres.toString()+"'");
+                //i.putExtra("zonaString", tres.toString());
             }else{
-                i.putExtra("zona", "");
+                i.putExtra("zonaLink", "");
             }
 
             if(!cuatro.toString().equals("Sin filtro")) {
-                i.putExtra("alimento", "ing="+cuatro.toString());
+                i.putExtra("alimentoLink", "ing='"+cuatro.toString()+"'");
+                //i.putExtra("alimentoString", cuatro.toString());
             }else{
-                i.putExtra("alimento","");
+                i.putExtra("alimentoLink","");
             }
 
             //i.putExtra("tipoAlimento",cinco.toString());
@@ -204,12 +207,9 @@ public class Avanzadas extends android.support.v4.app.Fragment implements Adapte
                 i.putExtra("tipoAlimento","Ningun alimento seleccionado");
             }*/
 
-
-
             startActivity(i);
-
-
-        }
+        }//Fin IF
 
     }//Fin metodo onClick
+
 }//Fin Clase
