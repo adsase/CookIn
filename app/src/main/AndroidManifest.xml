@@ -43,7 +43,14 @@
         </activity>
         <activity
             android:name=".collaborate.Collaborate"
-            android:label="@string/colabora_main"></activity>
+            android:label="@string/colabora_main">
+
+        </activity>
+        <activity
+            android:name=".about.About"
+            android:label="@string/about_main">
+
+        </activity>
     </application>
 
 </manifest>

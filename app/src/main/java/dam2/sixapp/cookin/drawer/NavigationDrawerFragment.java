@@ -237,10 +237,7 @@ public class NavigationDrawerFragment extends Fragment {
             case 7:
                 startActivity(new Intent(this.getActivity(), About.class));
                 break;
-            case 3:
-                startActivity(new Intent(this.getActivity(), recipeModeSelector.class));
-                //getActivity().finish();
-                break;
+
         }
     }
 
