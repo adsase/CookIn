@@ -24,6 +24,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import dam2.sixapp.cookin.R;
+import dam2.sixapp.cookin.collaborate.Collaborate;
 import dam2.sixapp.cookin.swipeTabs.userMain.MainActivity;
 import dam2.sixapp.cookin.swipeTabs.userMain.Recetas;
 
@@ -211,17 +212,13 @@ public class NavigationDrawerFragment extends Fragment {
         }
         switch(position){
             case 0:
-                Intent i0 = new Intent(this.getActivity(), MainActivity.class);
-                i0.putExtra("position", position);
-                startActivity(i0);
+                startActivity(new Intent(this.getActivity(), MainActivity.class));
                 break;
             case 1:
-                Intent i1 = new Intent(this.getActivity(), Recetas.class);
-                i1.putExtra("position", position);
-                startActivity(i1);
+                startActivity(new Intent(this.getActivity(), Recetas.class));
                 break;
             case 2:
-                //startActivity(new Intent(this.getActivity(), MainActivity.class));
+                startActivity(new Intent(this.getActivity(), Collaborate.class));
                 //getActivity().finish();
                 break;
         }

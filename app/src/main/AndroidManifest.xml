@@ -41,6 +41,9 @@
             android:name=".swipeTabs.userMain.filterTabsFragment.codeMain.TipoReceta"
             android:label="@string/title_activity_tipo_receta" >
         </activity>
+        <activity
+            android:name=".collaborate.Collaborate"
+            android:label="@string/colabora_main"></activity>
     </application>
 
 </manifest>
