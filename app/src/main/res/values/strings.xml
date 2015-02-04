@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Colabora  -->
+    <!-- Colabora -->
 
     <string name="texto_colabora">   Mándenos sus propias recetas en breve podrá encontrarla entre las búsquedas.
      Rellene los campos que se muestran a continuación y pulse el botón enviar una vez haya finalizado.</string>
-
     <string name="nom_receta">Nombre receta</string>
     <string name="ing_receta">Ingrediente principal</string>
     <string name="dur_receta">Duración receta</string>
@@ -15,8 +14,7 @@
     <string name="btn_receta">Enviar</string>
     <string name="colabora_main">Colabora</string>
 
-
-    <!-- Otros    -->
+    <!-- Otros -->
 
     <string name="app_name">Cookin</string>
     <string name="g_plus">GooglePlus</string>
@@ -24,7 +22,6 @@
     <string name="pendiente">Pendiente</string>
     <string name="hecho">Hecho</string>
     <string name="premium">Premium</string>
-
     <string name="my_account">Mi Cuenta</string>
     <string name="recipes">Recetas</string>
     <string name="colaborate">Colabora</string>
@@ -33,7 +30,6 @@
     <string name="premium_recipes">Recetas Premium</string>
     <string name="settings">Ajustes</string>
     <string name="about">Acerca de CookIn</string>
-
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_main_drawer">MainDrawer</string>
@@ -47,7 +43,6 @@
         <item>Hechas</item>
         <item>Premium</item>
     </string-array>
-
     <string-array name="tabRecetas">
         <item>Categorías</item>
         <item>Avanzadas</item>
@@ -99,7 +94,6 @@
         <item>60</item>
         <item>90</item>
         <item>120</item>
-
     </string-array>
     <string-array name="dificultad"> <!-- Array de las duraciones disponibles del Spinner spDificultadAvanzadas -->
 
@@ -131,5 +125,6 @@
 
     <string name="title_activity_tipo_receta">TipoReceta</string>
     <string name="title_activity_lista_recetas">ListaRecetas</string>
+    <string name="title_activity_recipe_mode_selector">recipeModeSelector</string>
 
 </resources>

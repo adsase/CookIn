@@ -25,6 +25,7 @@ import android.widget.Toast;
 
 import dam2.sixapp.cookin.R;
 import dam2.sixapp.cookin.collaborate.Collaborate;
+import dam2.sixapp.cookin.recipes.recipeModeSelector;
 import dam2.sixapp.cookin.swipeTabs.userMain.MainActivity;
 import dam2.sixapp.cookin.swipeTabs.userMain.Recetas;
 
@@ -219,6 +220,10 @@ public class NavigationDrawerFragment extends Fragment {
                 break;
             case 2:
                 startActivity(new Intent(this.getActivity(), Collaborate.class));
+                //getActivity().finish();
+                break;
+            case 3:
+                startActivity(new Intent(this.getActivity(), recipeModeSelector.class));
                 //getActivity().finish();
                 break;
         }

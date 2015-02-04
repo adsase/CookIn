@@ -1,0 +1,150 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="dam2.sixapp.cookin.recipes.recipeModeSelector">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight=".90">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Nombre receta"
+                    android:id="@+id/textView15" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView2"
+                    android:src="@drawable/ic_launcher"
+                    android:layout_marginTop="5dp" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight=".20">
+
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/scrollView2">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".50">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:text="Large Text"
+                            android:id="@+id/textView16" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:text="Large Text"
+                            android:id="@+id/textView17" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:text="Large Text"
+                            android:id="@+id/textView18" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".50">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:text="Large Text"
+                            android:id="@+id/textView19" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:text="Large Text"
+                            android:id="@+id/textView21" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:text="Large Text"
+                            android:id="@+id/textView20" />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight=".60">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="vjayfgjagsfkagsfkajfgakjsgfakjgfakjfgakjsfgashfkajhgfkajhfgakjhfgakjsdhagdkjasdgkjsdhfgakjdhagjafgjkhagfkjasdfhgasjfaskdjfhsadgfkajsafasdfsfsfavjayfgjagsfkagsfkajfgakjsgfakjgfakjfgakjsfgashfkajhgfkajhfgakjhfgakjsdhagdkjasdgkjsdhfgakjdhagjafgjkhagfkjasdfhgasjfaskdjfhsadgfkajsafasdfsfsfavjayfgjagsfkagsfkajfgakjsgfakjgfakjfgakjsfgashfkajhgfkajhfgakjhfgakjsdhagdkjasdgkjsdhfgakjdhagjafgjkhagfkjasdfhgasjfaskdjfhsadgfkajsafasdfsfsfavjayfgjagsfkagsfkajfgakjsgfakjgfakjfgakjsfgashfkajhgfkajhfgakjhfgakjsdhagdkjasdgkjsdhfgakjdhagjafgjkhagfkjasdfhgasjfaskdjfhsadgfkajsafasdfsfsfavjayfgjagsfkagsfkajfgakjsgfakjgfakjfgakjsfgashfkajhgfkajhfgakjhfgakjsdhagdkjasdgkjsdhfgakjdhagjafgjkhagfkjasdfhgasjfaskdjfhsadgfkajsafasdfsfsfavjayfgjagsfkagsfkajfgakjsgfakjgfakjfgakjsfgashfkajhgfkajhfgakjhfgakjsdhagdkjasdgkjsdhfgakjdhagjafgjkhagfkjasdfhgasjfaskdjfhsadgfkajsafasdfsfsfavjayfgjagsfkagsfkajfgakjsgfakjgfakjfgakjsfgashfkajhgfkajhfgakjhfgakjsdhagdkjasdgkjsdhfgakjdhagjafgjkhagfkjasdfhgasjfaskdjfhsadgfkajsafasdfsfsfavjayfgjagsfkagsfkajfgakjsgfakjgfakjfgakjsfgashfkajhgfkajhfgakjhfgakjsdhagdkjasdgkjsdhfgakjdhagjafgjkhagfkjasdfhgasjfaskdjfhsadgfkajsafasdfsfsfavjayfgjagsfkagsfkajfgakjsgfakjgfakjfgakjsfgashfkajhgfkajhfgakjhfgakjsdhagdkjasdgkjsdhfgakjdhagjafgjkhagfkjasdfhgasjfaskdjfhsadgfkajsafasdfsfsfa"
+                    android:id="@+id/textView14" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight=".80"
+                android:gravity="center">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lectura"
+                    android:id="@+id/button5" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Asistente"
+                    android:id="@+id/button4" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>
