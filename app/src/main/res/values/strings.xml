@@ -77,10 +77,12 @@
     <string-array name="duracion"> <!-- Array de las duraciones disponibles del Spinner spDuracionAvanzadas -->
 
         <item>Sin filtro</item>
-        <item> - 15 mins</item>
-        <item>15-30 mins</item>
-        <item>30-60 mins</item>
-        <item>+ 60 mins</item>
+        <item>20</item>
+        <item>30</item>
+        <item>60</item>
+        <item>90</item>
+        <item>120</item>
+
     </string-array>
     <string-array name="dificultad"> <!-- Array de las duraciones disponibles del Spinner spDificultadAvanzadas -->
 
@@ -94,7 +96,7 @@
         <item>Sin filtro</item>
         <item>Europa Este</item>
         <item>Oriental</item>
-        <item>Latina</item>
+        <item>Sudamérica</item>
         <item>Mediterránea</item>
         <item>Africana</item>
         <item>Otros</item>
@@ -102,9 +104,9 @@
     <string-array name="alimento"> <!-- Array de las duraciones disponibles del Spinner spAlimentoAvanzadas -->
 
         <item>Sin filtro</item>
-        <item>Carnes</item>
-        <item>Pescados</item>
-        <item>Verduras</item>
+        <item>Carne</item>
+        <item>Pescado</item>
+        <item>Vegetal</item>
         <item>Pasta</item>
         <item>Ensaladas</item>
         <item>Postres</item>

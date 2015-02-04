@@ -23,9 +23,9 @@
             android:layout_marginRight="10dp">
 
             <TextView
-                android:layout_width="220dp"
+                android:layout_width="190dp"
                 android:layout_height="match_parent"
-                android:text="Por Duración:"
+                android:text="Por Minutos (aprox.):"
                 android:id="@+id/textView"
                 android:gravity="center_vertical"
                 android:textSize="20dp"
@@ -49,7 +49,7 @@
             android:layout_marginRight="10dp">
 
             <TextView
-                android:layout_width="220dp"
+                android:layout_width="190dp"
                 android:layout_height="match_parent"
                 android:text="Por Dificultad:"
                 android:id="@+id/textView2"
@@ -74,7 +74,7 @@
             android:layout_marginRight="10dp">
 
             <TextView
-                android:layout_width="220dp"
+                android:layout_width="190dp"
                 android:layout_height="match_parent"
                 android:text="Por Zona:        "
                 android:id="@+id/textView3"
@@ -99,7 +99,7 @@
             android:layout_marginRight="10dp">
 
             <TextView
-                android:layout_width="220dp"
+                android:layout_width="190dp"
                 android:layout_height="match_parent"
                 android:text="Por Alimento:  "
                 android:id="@+id/textView4"
@@ -124,7 +124,7 @@
             android:layout_marginRight="10dp">
 
             <TextView
-                android:layout_width="220dp"
+                android:layout_width="190dp"
                 android:layout_height="match_parent"
                 android:text="Tipo Alimento:    "
                 android:id="@+id/textView5"

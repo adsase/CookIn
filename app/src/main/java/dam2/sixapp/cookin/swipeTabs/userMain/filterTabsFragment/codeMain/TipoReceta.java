@@ -37,7 +37,7 @@ public class TipoReceta extends Activity implements AdapterView.OnItemSelectedLi
     String nombre;
     int id;
     private String[] recetas;
-    private int[] arrayid;
+    //private int[] arrayid;
 
 
     String filtro;
@@ -64,7 +64,7 @@ public class TipoReceta extends Activity implements AdapterView.OnItemSelectedLi
 
 
         ArrayAdapter<CharSequence> adaptadorAlimentos;
-        ArrayList<String> pruebas = new ArrayList<String>();
+
 
         switch(filtro){
 
@@ -264,17 +264,17 @@ public class TipoReceta extends Activity implements AdapterView.OnItemSelectedLi
                 String respStr = EntityUtils.toString(resp.getEntity());
                 JSONArray respJSON = new JSONArray(respStr);
                 recetas = new String[respJSON.length()];
-                arrayid = new int[respJSON.length()];
+                //arrayid = new int[respJSON.length()];
 
                 for (int i = 0; i < respJSON.length(); i++) {
                     JSONObject obj = respJSON.getJSONObject(i);
 
 
                     nombre = obj.getString("NOMBRE");
-                    id = obj.getInt("IDRECETAS");
+                    //id = obj.getInt("IDRECETAS");
 
                     recetas[i] = "" + nombre;
-                    arrayid[i] = id;
+                    //arrayid[i] = id;
                 }
             } catch (Exception ex) {
                 Log.e("ServicioRest", "Error!", ex);

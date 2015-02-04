@@ -165,15 +165,37 @@ public class Avanzadas extends android.support.v4.app.Fragment implements Adapte
     @Override
     public void onClick(View v) {
 
-        if(v.getId()==R.id.bntAvanzadas){
+        if(v.getId()==R.id.bntAvanzadas) {
 
             //Toast.makeText(getActivity(),"Pasara a la activity de la lista de recetas",Toast.LENGTH_SHORT).show();
 
-            Intent i = new Intent(getActivity(), ListaRecetas.class);
-            i.putExtra("duracion",uno.toString());
-            i.putExtra("dificultad",dos.toString());
-            i.putExtra("zona",tres.toString());
-            i.putExtra("alimento",cuatro.toString());
+
+           Intent i = new Intent(getActivity(), ListaRecetas.class);
+
+            if (!uno.toString().equals("Sin filtro")) {
+                i.putExtra("duracion", "dur="+uno.toString());
+            } else {
+                i.putExtra("duracion", "");
+            }
+
+            if (!dos.toString().equals("Sin filtro")){
+                i.putExtra("dificultad", "dif='"+dos.toString()+"'");
+            }else {
+                 i.putExtra("dificultad", "");
+            }
+
+            if(!tres.toString().equals("Sin filtro")) {
+                i.putExtra("zona", "zon='"+tres.toString()+"'");
+            }else{
+                i.putExtra("zona", "");
+            }
+
+            if(!cuatro.toString().equals("Sin filtro")) {
+                i.putExtra("alimento", "ing="+cuatro.toString());
+            }else{
+                i.putExtra("alimento","");
+            }
+
             //i.putExtra("tipoAlimento",cinco.toString());
 
             /*if(cuatro.toString() != ".Sin filtro"){
@@ -181,6 +203,9 @@ public class Avanzadas extends android.support.v4.app.Fragment implements Adapte
             }else{
                 i.putExtra("tipoAlimento","Ningun alimento seleccionado");
             }*/
+
+
+
             startActivity(i);
 
 
