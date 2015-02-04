@@ -160,16 +160,6 @@ public class TipoReceta extends Activity implements AdapterView.OnItemSelectedLi
                 consulta = "?id='Pasta'";
                 break;
 
-            case "Ensaladas":
-
-                txt1.setText("Elegir tipo ensalda:");
-                adaptadorAlimentos = ArrayAdapter.createFromResource(this,R.array.ensaladas, android.R.layout.simple_spinner_item);
-                adaptadorAlimentos.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                spAlimentos.setAdapter(adaptadorAlimentos);
-                php = "filtro_categoria.php";
-                consulta = "?id='Ensaladas'";
-                break;
-
             case "Postres":
 
                 txt1.setText("Elegir tipo postre:");
@@ -220,10 +210,13 @@ public class TipoReceta extends Activity implements AdapterView.OnItemSelectedLi
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-        php = ("filtro_ingredientes.php?id='"+parent.getItemAtPosition(position).toString()+"'");
-        consulta = "";
-        //Toast.makeText(getApplicationContext(),"El link es "+php,Toast.LENGTH_LONG).show();
-
+        if(!spAlimentos.getSelectedItem().toString().equals("Todos")){
+            php = ("filtro_ingredientes.php?id='" + parent.getItemAtPosition(position).toString() + "'");
+            consulta = "";
+            //Toast.makeText(getApplicationContext(),"El link es "+php,Toast.LENGTH_LONG).show();
+        }else{
+            php = ("filtro_categoria.php");
+        }
         mostrar tarea = new mostrar();
         tarea.execute();
 
@@ -299,7 +292,9 @@ public class TipoReceta extends Activity implements AdapterView.OnItemSelectedLi
                 list.setAdapter(adaptador);
 
 
-            }
+            }else{
+            Toast.makeText(getApplicationContext(), "Se ha producido un error al realizar la consulta", Toast.LENGTH_LONG).show();
+        }
         }
 
     }

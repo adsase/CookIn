@@ -30,8 +30,8 @@ public class Categorias extends android.support.v4.app.Fragment{
 
             {"< 15 mins", "15-30 mins", "30-60 mins", "> 60 mins"},//Por duracion
             {"Fácil", "Media", "Difícil"},//Por dificultad
-            {"Europa Este", "Oriental", "Latina", "Mediterránea", "Africána", "Otros"},//Por zona
-            {"Carnes", "Pescados", "Verduras", "Pasta", "Ensaladas", "Postres"}, //Por alimento
+            {"Oriental", "Latina", "Mediterránea", "Africana", "Otros"},//Por zona
+            {"Carnes", "Pescados", "Verduras", "Pastas", "Postres"}, //Por alimento
     };
 
 	public Categorias() {
