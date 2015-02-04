@@ -223,16 +223,16 @@ public class NavigationDrawerFragment extends Fragment {
                 startActivity(new Intent(this.getActivity(), Collaborate.class));
                 break;
             case 3:
-//                startActivity(new Intent(this.getActivity(), Collaborate.class));
+                //startActivity(new Intent(this.getActivity(), recipeModeSelector.class));//AYUDA
                 break;
             case 4:
-//                startActivity(new Intent(this.getActivity(), Collaborate.class));
+//                startActivity(new Intent(this.getActivity(), Collaborate.class));//COMPRA ONLINE
                 break;
             case 5:
-//                startActivity(new Intent(this.getActivity(), Collaborate.class));
+//                startActivity(new Intent(this.getActivity(), Collaborate.class));//RECETAS PREMIUM
                 break;
             case 6:
-//                startActivity(new Intent(this.getActivity(), Collaborate.class));
+//                startActivity(new Intent(this.getActivity(), Collaborate.class));//AJUSTES
                 break;
             case 7:
                 startActivity(new Intent(this.getActivity(), About.class));

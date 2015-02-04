@@ -13,7 +13,6 @@
     <string name="tex_receta">Descripción receta</string>
     <string name="btn_receta">Enviar</string>
     <string name="colabora_main">Colabora</string>
-
     <string name="about_main">About</string>
 
     <!-- Otros -->
@@ -65,9 +64,6 @@
         <item>Pato</item>
         <item>Gallina</item>
         <item>Callos</item>
-
-
-
     </string-array>
     <string-array name="pescados"> <!-- Array de los diferentes tipos de pescados del Spinner de alimentos -->
 
@@ -87,7 +83,6 @@
         <item>Calabacín</item>
         <item>Alcachofa</item>
         <item>Tomates</item>
-
     </string-array>
     <string-array name="pasta"> <!-- Array de los diferentes tipos de pastas del Spinner de alimentos -->
         <item>Todos</item>
@@ -97,9 +92,6 @@
         <item>Tallarines</item>
         <item>Arroz</item>
         <item>Pizza</item>
-
-
-
     </string-array>
     <string-array name="postres"> <!-- Array de los diferentes tipos de postres del Spinner de alimentos -->
 
@@ -147,5 +139,17 @@
     <string name="title_activity_tipo_receta">TipoReceta</string>
     <string name="title_activity_lista_recetas">ListaRecetas</string>
     <string name="title_activity_recipe_mode_selector">recipeModeSelector</string>
+
+    <!-- Strings RecipeMode -->
+    <string name="read_button">LECTURA</string>
+    <string name="assistant_button">ASISTENTE</string>
+    <string name="difficulty">Dificultad: </string>
+    <string name="duration">Duración: </string>
+    <string name="votes">Votos: </string>
+    <string name="zone">Zona: </string>
+    <string name="title_activity_recipe_assistant">recipeAssistant</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
 
 </resources>

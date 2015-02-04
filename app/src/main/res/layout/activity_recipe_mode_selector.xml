@@ -1,17 +1,20 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="dam2.sixapp.cookin.recipes.recipeModeSelector">
+    tools:context="dam2.sixapp.cookin.recipes.recipeModeSelector"
+    android:padding="10dp"
+    android:background="?attr/colorAccent">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_height="fill_parent"
+        android:background="#ffffffff">
 
         <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_weight=".90">
+            android:layout_weight=".50">
 
             <LinearLayout
                 android:orientation="vertical"
@@ -23,18 +26,22 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="Nombre receta"
-                    android:id="@+id/textView15" />
+                    android:id="@+id/recipeName" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/imageView2"
-                    android:src="@drawable/ic_launcher"
-                    android:layout_marginTop="5dp" />
+                    android:id="@+id/recipeImage"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"/>
             </LinearLayout>
 
         </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#64000000" />
 
         <LinearLayout
             android:orientation="vertical"
@@ -42,105 +49,97 @@
             android:layout_height="fill_parent"
             android:layout_weight=".20">
 
-            <ScrollView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/scrollView2">
-
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="fill_parent"
-                    android:layout_height="fill_parent">
+                    android:layout_height="fill_parent"
+                    android:layout_weight=".95"
+                    android:gravity="center">
 
                     <LinearLayout
                         android:orientation="vertical"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight=".50">
+                        android:layout_weight=".50"
+                        android:gravity="center">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:text="Large Text"
-                            android:id="@+id/textView16" />
+                            android:id="@+id/difficulty" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:text="Large Text"
-                            android:id="@+id/textView17" />
+                            android:id="@+id/duration" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:text="Large Text"
-                            android:id="@+id/textView18" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:orientation="vertical"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight=".50">
+                        android:layout_weight=".50"
+                        android:gravity="center">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:text="Large Text"
-                            android:id="@+id/textView19" />
+                            android:id="@+id/votes" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:text="Large Text"
-                            android:id="@+id/textView21" />
+                            android:id="@+id/zone" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:text="Large Text"
-                            android:id="@+id/textView20" />
                     </LinearLayout>
                 </LinearLayout>
-            </ScrollView>
 
-            <LinearLayout
-                android:orientation="vertical"
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#64000000" />
+
+            <ScrollView
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
+                android:id="@+id/scrollView2"
                 android:layout_weight=".60">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="vjayfgjagsfkagsfkajfgakjsgfakjgfakjfgakjsfgashfkajhgfkajhfgakjhfgakjsdhagdkjasdgkjsdhfgakjdhagjafgjkhagfkjasdfhgasjfaskdjfhsadgfkajsafasdfsfsfavjayfgjagsfkagsfkajfgakjsgfakjgfakjfgakjsfgashfkajhgfkajhfgakjhfgakjsdhagdkjasdgkjsdhfgakjdhagjafgjkhagfkjasdfhgasjfaskdjfhsadgfkajsafasdfsfsfavjayfgjagsfkagsfkajfgakjsgfakjgfakjfgakjsfgashfkajhgfkajhfgakjhfgakjsdhagdkjasdgkjsdhfgakjdhagjafgjkhagfkjasdfhgasjfaskdjfhsadgfkajsafasdfsfsfavjayfgjagsfkagsfkajfgakjsgfakjgfakjfgakjsfgashfkajhgfkajhfgakjhfgakjsdhagdkjasdgkjsdhfgakjdhagjafgjkhagfkjasdfhgasjfaskdjfhsadgfkajsafasdfsfsfavjayfgjagsfkagsfkajfgakjsgfakjgfakjfgakjsfgashfkajhgfkajhfgakjhfgakjsdhagdkjasdgkjsdhfgakjdhagjafgjkhagfkjasdfhgasjfaskdjfhsadgfkajsafasdfsfsfavjayfgjagsfkagsfkajfgakjsgfakjgfakjfgakjsfgashfkajhgfkajhfgakjhfgakjsdhagdkjasdgkjsdhfgakjdhagjafgjkhagfkjasdfhgasjfaskdjfhsadgfkajsafasdfsfsfavjayfgjagsfkagsfkajfgakjsgfakjgfakjfgakjsfgashfkajhgfkajhfgakjhfgakjsdhagdkjasdgkjsdhfgakjdhagjafgjkhagfkjasdfhgasjfaskdjfhsadgfkajsafasdfsfsfavjayfgjagsfkagsfkajfgakjsgfakjgfakjfgakjsfgashfkajhgfkajhfgakjhfgakjsdhagdkjasdgkjsdhfgakjdhagjafgjkhagfkjasdfhgasjfaskdjfhsadgfkajsafasdfsfsfavjayfgjagsfkagsfkajfgakjsgfakjgfakjfgakjsfgashfkajhgfkajhfgakjhfgakjsdhagdkjasdgkjsdhfgakjdhagjafgjkhagfkjasdfhgasjfaskdjfhsadgfkajsafasdfsfsfa"
-                    android:id="@+id/textView14" />
-            </LinearLayout>
+                    android:id="@+id/description"
+                    android:layout_margin="5dp"/>
+            </ScrollView>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#64000000" />
 
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_weight=".80"
+                android:layout_weight=".95"
                 android:gravity="center">
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Lectura"
-                    android:id="@+id/button5" />
+                    android:id="@+id/readButton"
+                    android:text="@string/read_button"/>
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Asistente"
-                    android:id="@+id/button4" />
+                    android:id="@+id/assistantButton"
+                    android:text="@string/assistant_button"/>
 
             </LinearLayout>
 

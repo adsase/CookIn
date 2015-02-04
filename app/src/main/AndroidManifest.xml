@@ -43,13 +43,19 @@
         </activity>
         <activity
             android:name=".collaborate.Collaborate"
-            android:label="@string/colabora_main">
-
+            android:label="@string/colabora_main" >
         </activity>
         <activity
             android:name=".about.About"
-            android:label="@string/about_main">
-
+            android:label="@string/about_main" >
+        </activity>
+        <activity
+            android:name=".recipes.recipeModeSelector"
+            android:label="@string/about_main" >
+        </activity>
+        <activity
+            android:name=".recipes.recipeAssistant"
+            android:label="@string/title_activity_recipe_assistant" >
         </activity>
     </application>
 
