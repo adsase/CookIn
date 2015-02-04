@@ -96,12 +96,12 @@
         <item>Oriental</item>
         <item>Latina</item>
         <item>Mediterránea</item>
-        <item>Africána</item>
+        <item>Africana</item>
         <item>Otros</item>
     </string-array>
     <string-array name="alimento"> <!-- Array de las duraciones disponibles del Spinner spAlimentoAvanzadas -->
 
-        <item>.Sin filtro</item>
+        <item>Sin filtro</item>
         <item>Carnes</item>
         <item>Pescados</item>
         <item>Verduras</item>

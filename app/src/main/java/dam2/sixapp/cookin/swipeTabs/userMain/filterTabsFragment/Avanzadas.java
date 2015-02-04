@@ -77,13 +77,11 @@ public class Avanzadas extends android.support.v4.app.Fragment implements Adapte
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-        uno = spDuracionAvanzadas.getItemAtPosition(position).toString();
-
 
         //---------------------------------Switch de los tipos de alimentos------------------------------------------------------------------------
-        switch (spAlimentoAvanzadas.getItemAtPosition(position).toString()) {
+        switch (spAlimentoAvanzadas.getSelectedItem().toString()) {
 
-            case ".Sin filtro":
+            case "Sin filtro":
 
                 spTipoAlimentoAvanzadas.setEnabled(false);
                 //Toast.makeText(getActivity(), "Sale", Toast.LENGTH_SHORT).show();
@@ -149,6 +147,13 @@ public class Avanzadas extends android.support.v4.app.Fragment implements Adapte
 
                 break;
         }//Fin switch
+
+        uno = spDuracionAvanzadas.getSelectedItem().toString();
+        dos = spDificultadAvanzadas.getSelectedItem().toString();
+        tres = spZonaAvanzadas.getSelectedItem().toString();
+        cuatro = spAlimentoAvanzadas.getSelectedItem().toString();
+
+
     }//Fin metodo onItemSelected
 
 
@@ -166,6 +171,16 @@ public class Avanzadas extends android.support.v4.app.Fragment implements Adapte
 
             Intent i = new Intent(getActivity(), ListaRecetas.class);
             i.putExtra("duracion",uno.toString());
+            i.putExtra("dificultad",dos.toString());
+            i.putExtra("zona",tres.toString());
+            i.putExtra("alimento",cuatro.toString());
+            //i.putExtra("tipoAlimento",cinco.toString());
+
+            /*if(cuatro.toString() != ".Sin filtro"){
+                i.putExtra("tipoAlimento",cinco.toString());
+            }else{
+                i.putExtra("tipoAlimento","Ningun alimento seleccionado");
+            }*/
             startActivity(i);
 
 

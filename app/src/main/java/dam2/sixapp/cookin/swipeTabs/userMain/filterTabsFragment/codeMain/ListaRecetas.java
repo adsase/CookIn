@@ -12,6 +12,7 @@ import dam2.sixapp.cookin.R;
 public class ListaRecetas extends Activity {//avanzadas
 
     TextView textViewDura, textViewDifi, textViewZo, textViewAli, textViewTipoAli;
+    String dura, difi, zona, ali, tipoAli;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,10 +21,27 @@ public class ListaRecetas extends Activity {//avanzadas
         setContentView(R.layout.activity_lista_recetas);
 
         Bundle b = getIntent().getExtras();
-        String mismo1 = b.getString("duracion");
+        dura = b.getString("duracion");
+        difi = b.getString("dificultad");
+        zona = b.getString("zona");
+        ali = b.getString("alimento");
+        //tipoAli = b.getString("tipoAlimento");
 
         textViewDura=(TextView)findViewById(R.id.textViewDura);
-        textViewDura.setText(mismo1);
+        textViewDura.setText(dura);
+
+        textViewDifi=(TextView)findViewById(R.id.textViewDifi);
+        textViewDifi.setText(difi);
+
+        textViewZo=(TextView)findViewById(R.id.textViewZo);
+        textViewZo.setText(zona);
+
+        textViewAli=(TextView)findViewById(R.id.textViewAli);
+        textViewAli.setText(ali);
+
+        /*textViewTipoAli=(TextView)findViewById(R.id.textViewTipoAli);
+        textViewTipoAli.setText(tipoAli);*/
+
 
     }
 
