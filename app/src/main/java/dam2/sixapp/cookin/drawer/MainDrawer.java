@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import dam2.sixapp.cookin.R;
+import dam2.sixapp.cookin.database.local.CreateDataBaseLocal;
 
 
 public class MainDrawer extends ActionBarActivity
@@ -41,6 +42,7 @@ public class MainDrawer extends ActionBarActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+        new CreateDataBaseLocal(getApplicationContext());
 
 
     }
