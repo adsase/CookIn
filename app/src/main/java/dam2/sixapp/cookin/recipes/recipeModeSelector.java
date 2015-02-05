@@ -1,5 +1,6 @@
 package dam2.sixapp.cookin.recipes;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBarActivity;
@@ -7,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -25,7 +27,7 @@ import org.json.JSONObject;
 
 import dam2.sixapp.cookin.R;
 
-public class recipeModeSelector extends ActionBarActivity{
+public class recipeModeSelector extends ActionBarActivity implements View.OnClickListener{
 
     private TextView recipeName,difficulty,duration,votes,zone,description;
     private Button readButton,assistantButton;
@@ -51,6 +53,7 @@ public class recipeModeSelector extends ActionBarActivity{
         zone = (TextView) findViewById(R.id.zone);
         description = (TextView) findViewById(R.id.description);
         readButton = (Button) findViewById(R.id.readButton);
+        readButton.setOnClickListener(this);
         assistantButton = (Button) findViewById(R.id.assistantButton);
         Bundle b = getIntent().getExtras();
         idReceta=b.getInt("id");
@@ -103,6 +106,15 @@ public class recipeModeSelector extends ActionBarActivity{
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(v.getId()==R.id.readButton){
+            Intent i=new Intent(getApplicationContext(),readMode.class);
+            i.putExtra("id",idReceta);
+            startActivity(i);
+        }
     }
 
     private class mostrar extends AsyncTask<String, Integer, Boolean> {
