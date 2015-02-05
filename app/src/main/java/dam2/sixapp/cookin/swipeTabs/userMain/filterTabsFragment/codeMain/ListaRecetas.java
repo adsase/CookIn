@@ -1,11 +1,14 @@
 package dam2.sixapp.cookin.swipeTabs.userMain.filterTabsFragment.codeMain;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -22,14 +25,17 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 import dam2.sixapp.cookin.R;
+import dam2.sixapp.cookin.recipes.recipeModeSelector;
 
 
-public class ListaRecetas extends Activity {//avanzadas
+public class ListaRecetas extends Activity implements AdapterView.OnItemClickListener{//avanzadas
 
     TextView textViewDura, textViewDifi, textViewZo, textViewAli;
     private ListView list;
-    String duraLink, difiLink, zonaLink, aliLink, tipoAliLink, dura2, difi2, zona2, ali2, tipoAli2, url, nombre;
-    private String[] recetas;
+    String duraLink, difiLink, zonaLink, aliLink, tipoAliLink, dura2, difi2, zona2, ali2, tipoAli2, url, nombre, imageURL;
+    private String[] recetas, recetasURL;
+    int id;
+    private int[] arrayid;
 
 
     @Override
@@ -42,13 +48,14 @@ public class ListaRecetas extends Activity {//avanzadas
         duraLink = b.getString("duracionLink");
         difiLink = b.getString("dificultadLink");
         zonaLink = b.getString("zonaLink");
-        aliLink = b.getString("alimentoLink");
+        aliLink = b.getString("catLink");
         tipoAliLink="";
 
 
         list = (ListView)findViewById(R.id.list);
+        list.setOnItemClickListener(this);
 
-        url = ("http://cookin.hol.es/android_connect/filtros_avanzados.php?"+tipoAliLink+"&"+duraLink+"&"+difiLink+"&"+zonaLink);
+        url = ("http://cookin.hol.es/android_connect/filtros_avanzados.php?"+aliLink+"&"+duraLink+"&"+difiLink+"&"+zonaLink);
         //Toast.makeText(getApplicationContext(), url, Toast.LENGTH_LONG).show();
 
         mostrar m = new mostrar();
@@ -78,6 +85,22 @@ public class ListaRecetas extends Activity {//avanzadas
         return false;
     }
 
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        float x= list.getItemIdAtPosition(position);
+        int index =Math.round(x);
+        int idrec=arrayid[index];
+
+        //Toast.makeText(getApplicationContext(),"ID: "+idrec,Toast.LENGTH_SHORT).show();
+
+        Intent i = new Intent(getApplicationContext(),recipeModeSelector.class);
+
+        i.putExtra("id", idrec);
+
+        startActivity(i);
+
+    }
+
     private class mostrar extends AsyncTask<String, Integer, Boolean> {
 
         @Override
@@ -94,14 +117,20 @@ public class ListaRecetas extends Activity {//avanzadas
                 String respStr = EntityUtils.toString(resp.getEntity());
                 JSONArray respJSON = new JSONArray(respStr);
                 recetas = new String[respJSON.length()];
+                recetasURL = new String[respJSON.length()];
+                arrayid = new int[respJSON.length()];
 
                 for (int i = 0; i < respJSON.length(); i++) {
                     JSONObject obj = respJSON.getJSONObject(i);
 
 
                     nombre = obj.getString("NOMBRE");
+                    imageURL = obj.getString("IMAGEN");
+                    id = obj.getInt("IDRECETAS");
 
                     recetas[i] = "" + nombre;
+                    recetasURL[i] = imageURL;
+                    arrayid[i] = id;
                 }
             } catch (Exception ex) {
                 Log.e("ServicioRest", "Error!", ex);
@@ -128,7 +157,7 @@ public class ListaRecetas extends Activity {//avanzadas
 
             }else{
 
-                Toast.makeText(getApplicationContext(),"Error de la Base de Datos", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Error en la base de datos", Toast.LENGTH_SHORT).show();
 
             }
         }

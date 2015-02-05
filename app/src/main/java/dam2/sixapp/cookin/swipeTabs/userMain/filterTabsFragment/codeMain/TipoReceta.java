@@ -45,7 +45,7 @@ public class TipoReceta extends Activity implements AdapterView.OnItemSelectedLi
     String filtro;
     String conex = "http://cookin.hol.es/android_connect/";
     String php;
-    String consulta ="";
+    String consulta ="", guardaconsulta;
 
 
     @Override
@@ -179,6 +179,8 @@ public class TipoReceta extends Activity implements AdapterView.OnItemSelectedLi
                 spAlimentos.setActivated(false);
 
         }
+
+        guardaconsulta = consulta;
         mostrar tarea = new mostrar();
         tarea.execute();
 
@@ -219,6 +221,7 @@ public class TipoReceta extends Activity implements AdapterView.OnItemSelectedLi
             //Toast.makeText(getApplicationContext(),"El link es "+php,Toast.LENGTH_LONG).show();
         }else{
             php = ("filtro_categoria.php");
+            consulta = guardaconsulta;
         }
         mostrar tarea = new mostrar();
         tarea.execute();
