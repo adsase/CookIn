@@ -37,6 +37,8 @@ public class recipeModeSelector extends ActionBarActivity{
         description = (TextView) findViewById(R.id.description);
         readButton = (Button) findViewById(R.id.readButton);
         assistantButton = (Button) findViewById(R.id.assistantButton);
+        Bundle b=getIntent().getExtras();
+        idReceta=b.getInt("id");
 
         recipeNameS = "";
         imageUrl = "/** AQUI URL DE IMAGEN **/";
@@ -57,6 +59,7 @@ public class recipeModeSelector extends ActionBarActivity{
 
 
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
