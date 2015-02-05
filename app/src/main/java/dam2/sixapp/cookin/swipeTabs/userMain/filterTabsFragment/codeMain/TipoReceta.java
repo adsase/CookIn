@@ -71,21 +71,26 @@ public class TipoReceta extends Activity implements AdapterView.OnItemSelectedLi
 
         switch(filtro){
 
-            case "<15 mins":
+            case "20 mins":
                 php = "filtro_menor15.php";
                 break;
 
-            case "15-30 mins":
+            case "30 mins":
                 php = "filtro_menor30.php";
                 break;
 
-            case "30-60 mins":
+            case "60 mins":
                 php = "filtro_menor60.php";
                 break;
 
-            case "> 60 mins":
+            case "90 mins":
                 php = "filtro_mayor60.php";
                 break;
+
+            case "120 mins":
+                php = "filtro90.php";
+                break;
+
 
             case "Fácil":
                 php = "filtro_facil.php";
@@ -153,7 +158,7 @@ public class TipoReceta extends Activity implements AdapterView.OnItemSelectedLi
                 consulta = "?id='Vegetal'";
                 break;
 
-            case "Pasta":
+            case "Pastas":
 
                 txt1.setText("Elegir tipo pasta:");
                 adaptadorAlimentos = ArrayAdapter.createFromResource(this,R.array.pasta, android.R.layout.simple_spinner_item);
@@ -183,6 +188,9 @@ public class TipoReceta extends Activity implements AdapterView.OnItemSelectedLi
         guardaconsulta = consulta;
         mostrar tarea = new mostrar();
         tarea.execute();
+
+        //Toast.makeText(getApplicationContext(), php+consulta, Toast.LENGTH_LONG).show();
+
 
 
     }
@@ -307,7 +315,7 @@ public class TipoReceta extends Activity implements AdapterView.OnItemSelectedLi
 
 
             }else{
-            Toast.makeText(getApplicationContext(), "Se ha producido un error al realizar la consulta", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Error en la búsqueda", Toast.LENGTH_LONG).show();
         }
         }
 

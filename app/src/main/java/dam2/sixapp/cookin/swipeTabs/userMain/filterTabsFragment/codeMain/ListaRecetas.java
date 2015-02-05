@@ -157,7 +157,7 @@ public class ListaRecetas extends Activity implements AdapterView.OnItemClickLis
 
             }else{
 
-                Toast.makeText(getApplicationContext(),"Error en la base de datos", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Error en la búsqueda", Toast.LENGTH_SHORT).show();
 
             }
         }

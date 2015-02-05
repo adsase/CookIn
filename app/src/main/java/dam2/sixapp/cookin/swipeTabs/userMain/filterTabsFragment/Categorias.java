@@ -28,7 +28,7 @@ public class Categorias extends android.support.v4.app.Fragment{
 
     static String[][]segundoNivel = {//Array para el segundo nivel de la lista expandible
 
-            {"< 15 mins", "15-30 mins", "30-60 mins", "> 60 mins"},//Por duracion
+            {"20 mins", "30 mins", "60 mins", "90 mins", "120 mins"},//Por duracion
             {"Fácil", "Media", "Difícil"},//Por dificultad
             {"Oriental", "Latina", "Mediterránea", "Africana", "Otros"},//Por zona
             {"Carnes", "Pescados", "Verduras", "Pastas", "Postres"}, //Por alimento

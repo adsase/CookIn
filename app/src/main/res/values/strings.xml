@@ -94,7 +94,7 @@
         <item>Pizza</item>
     </string-array>
     <string-array name="postres"> <!-- Array de los diferentes tipos de postres del Spinner de alimentos -->
-
+        <item>Todos</item>
         <item>Chocolate</item>
         <item>Mango</item>
     </string-array>
