@@ -67,7 +67,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:id="@+id/difficulty" />
+                            android:id="@+id/difficulty"/>
 
                         <TextView
                             android:layout_width="wrap_content"
