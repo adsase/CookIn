@@ -1,0 +1,8 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="dam2.sixapp.cookin.recipes.readMode" >
+    <item android:id="@+id/item1"
+        android:title="Compartir">
+    </item>
+
+</menu>
