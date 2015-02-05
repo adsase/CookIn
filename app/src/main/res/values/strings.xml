@@ -139,6 +139,7 @@
     <string name="title_activity_tipo_receta">TipoReceta</string>
     <string name="title_activity_lista_recetas">ListaRecetas</string>
     <string name="title_activity_recipe_mode_selector">recipeModeSelector</string>
+    <string name="activity_recipe_mode_selector_layout">Receta</string>
 
     <!-- Strings RecipeMode -->
     <string name="read_button">LECTURA</string>

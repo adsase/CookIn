@@ -51,7 +51,7 @@
         </activity>
         <activity
             android:name=".recipes.recipeModeSelector"
-            android:label="@string/about_main"
+            android:label="@string/activity_recipe_mode_selector_layout"
             android:parentActivityName=".swipeTabs.userMain.filterTabsFragment.codeMain.TipoReceta">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
