@@ -26,7 +26,7 @@ import android.widget.Toast;
 import dam2.sixapp.cookin.R;
 import dam2.sixapp.cookin.about.About;
 import dam2.sixapp.cookin.collaborate.Collaborate;
-import dam2.sixapp.cookin.recipes.recipeModeSelector;
+import dam2.sixapp.cookin.recipes.recipeAssistant;
 import dam2.sixapp.cookin.swipeTabs.userMain.MainActivity;
 import dam2.sixapp.cookin.swipeTabs.userMain.Recetas;
 
@@ -223,7 +223,7 @@ public class NavigationDrawerFragment extends Fragment {
                 startActivity(new Intent(this.getActivity(), Collaborate.class));
                 break;
             case 3:
-                //startActivity(new Intent(this.getActivity(), recipeModeSelector.class));//AYUDA
+                startActivity(new Intent(this.getActivity(), recipeAssistant.class));//AYUDA
                 break;
             case 4:
 //                startActivity(new Intent(this.getActivity(), Collaborate.class));//COMPRA ONLINE
@@ -286,11 +286,6 @@ public class NavigationDrawerFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (mDrawerToggle.onOptionsItemSelected(item)) {
-            return true;
-        }
-
-        if (item.getItemId() == R.id.action_example) {
-            Toast.makeText(getActivity(), "Example action.", Toast.LENGTH_SHORT).show();
             return true;
         }
 

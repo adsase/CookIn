@@ -97,34 +97,6 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
 
     }
 
-   /* private void moveDrawerToTop(){
-        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        DrawerLayout drawer = (DrawerLayout) inflater.inflate(R.layout.decor,null);
-
-        ViewGroup decor = (ViewGroup) getWindow().getDecorView();
-        View child = decor.getChildAt(0);
-        decor.removeView(child);
-        //LinearLayout container = (LinearLayout) drawer.findViewById(R.id.drawer_content);
-        //container.addView(child, 0);
-        FrameLayout container = (FrameLayout) drawer.findViewById(R.id.container);
-        container.addView(child);
-        drawer.findViewById(R.id.navigation_drawer).setPadding(0, getStatusBarHeight(), 0, 0);
-
-        //FrameLayout container = (FrameLayout) drawer.findViewById(R.id.container);
-        //container.addView(child);
-
-        decor.addView(drawer);
-    }*/
-
-    public int getStatusBarHeight(){
-        int result = 0;
-        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
-        if (resourceId > 0){
-            result = getResources().getDimensionPixelSize(resourceId);
-        }
-        return result;
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -139,10 +111,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+       
 
         return super.onOptionsItemSelected(item);
     }
