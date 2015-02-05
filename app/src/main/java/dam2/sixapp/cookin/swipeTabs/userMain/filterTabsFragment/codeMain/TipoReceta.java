@@ -36,9 +36,9 @@ public class TipoReceta extends Activity implements AdapterView.OnItemSelectedLi
     Spinner spAlimentos;
     TextView txt1;
 
-    String nombre;
-     int id;
-    private String[] recetas;
+    String nombre,imageURL;
+    int id;
+    private String[] recetas,recetasURL;
     private int[] arrayid;
 
 
@@ -55,7 +55,7 @@ public class TipoReceta extends Activity implements AdapterView.OnItemSelectedLi
 
 
         Bundle b = getIntent().getExtras();
-        filtro = b.getString("elemento");
+        filtro = b.getString("elemento"); /** ERROR -- Abre recipeModeSelector y al darle a la flecha no devuelve ningun Bundle**/
 
         txt1=(TextView)findViewById(R.id.textViewTipoRecetas);
         list=(ListView)findViewById(R.id.lista);
@@ -232,19 +232,19 @@ public class TipoReceta extends Activity implements AdapterView.OnItemSelectedLi
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-    float x= list.getItemIdAtPosition(position);
+        float x= list.getItemIdAtPosition(position);
         int index =Math.round(x);
         int idrec=arrayid[index];
 
         Toast.makeText(getApplicationContext(),"ID: "+idrec,Toast.LENGTH_SHORT).show();
 
-
-
-        Intent i = new Intent(this,recipeModeSelector.class);
+        Intent i = new Intent(getApplicationContext(),recipeModeSelector.class);
 
         i.putExtra("id", idrec);
 
         startActivity(i);
+
+
     }
 
 
@@ -264,6 +264,7 @@ public class TipoReceta extends Activity implements AdapterView.OnItemSelectedLi
                 String respStr = EntityUtils.toString(resp.getEntity());
                 JSONArray respJSON = new JSONArray(respStr);
                 recetas = new String[respJSON.length()];
+                recetasURL = new String[respJSON.length()];
                 arrayid = new int[respJSON.length()];
 
                 for (int i = 0; i < respJSON.length(); i++) {
@@ -271,9 +272,11 @@ public class TipoReceta extends Activity implements AdapterView.OnItemSelectedLi
 
 
                     nombre = obj.getString("NOMBRE");
+                    imageURL = obj.getString("IMAGEN");
                     id = obj.getInt("IDRECETAS");
 
                     recetas[i] = "" + nombre;
+                    recetasURL[i] = imageURL;
                     arrayid[i] = id;
                 }
             } catch (Exception ex) {
@@ -294,7 +297,7 @@ public class TipoReceta extends Activity implements AdapterView.OnItemSelectedLi
                 ArrayAdapter<String> adaptador =
                         new ArrayAdapter<String>(TipoReceta.this,
                                 android.R.layout.simple_list_item_1, recetas);
-
+/** FALTA LISTA PERSONALIZADA PARA MOSTRAR IMAGEN Y NOMBRE DE RECETA **/
 
                 list.setAdapter(adaptador);
 

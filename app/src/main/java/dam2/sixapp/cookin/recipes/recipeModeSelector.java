@@ -37,7 +37,7 @@ public class recipeModeSelector extends ActionBarActivity{
         description = (TextView) findViewById(R.id.description);
         readButton = (Button) findViewById(R.id.readButton);
         assistantButton = (Button) findViewById(R.id.assistantButton);
-        Bundle b=getIntent().getExtras();
+        Bundle b = getIntent().getExtras();
         idReceta=b.getInt("id");
 
         recipeNameS = "";
@@ -50,7 +50,11 @@ public class recipeModeSelector extends ActionBarActivity{
 
 
         recipeName.setText(recipeNameS);
-        Picasso.with(getApplicationContext()).load(imageUrl).into(recipeImage);
+        if(imageUrl == null) {
+            recipeImage.setImageDrawable(getResources().getDrawable(R.drawable.app_logo));
+        }else{
+            Picasso.with(getApplicationContext()).load(imageUrl).into(recipeImage);
+        }
         difficulty.setText(getResources().getString(R.string.difficulty)+" "+difficultyS);
         duration.setText(getResources().getString(R.string.duration)+" "+durationS);
         votes.setText(getResources().getString(R.string.votes)+" "+votesS);
