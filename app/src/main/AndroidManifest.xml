@@ -51,8 +51,7 @@
         </activity>
         <activity
             android:name=".recipes.recipeModeSelector"
-            android:label="@string/about_main"
-            >
+            android:label="@string/about_main" >
         </activity>
         <activity
             android:name=".recipes.recipeAssistant"
