@@ -45,28 +45,8 @@ public class Recetas extends ActionBarActivity implements ActionBar.TabListener,
 
 		});
 
-		/*Tab tab1 = actionBar.newTab();
-		tab1.setText("Categorias");
-		tab1.setTabListener(this);
-
-		Tab tab2 = actionBar.newTab();
-		tab2.setText("Avanzadas");
-		tab2.setTabListener(this);
-
-		Tab tab3 = actionBar.newTab();
-		tab3.setText("+ Cocinadas");
-		tab3.setTabListener(this);
-
-        Tab tab4 = actionBar.newTab();
-        tab4.setText("+ Valoradas");
-        tab4.setTabListener(this);
-
-        actionBar.addTab(tab1);
-        actionBar.addTab(tab2);
-        actionBar.addTab(tab3);
-        actionBar.addTab(tab4);*/
-
         String[] tabs = getResources().getStringArray(R.array.tabRecetas);
+
         // Añadiendo Tabs
         for (String tab_name : tabs) {
             actionBar.addTab(actionBar.newTab().setText(tab_name).setTabListener(this));
@@ -84,13 +64,13 @@ public class Recetas extends ActionBarActivity implements ActionBar.TabListener,
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 
-        int id = item.getItemId();
+        /*int id = item.getItemId();
         if(id == R.id.action_search){
 
             Toast.makeText(this,"Has pulsado el buscador",Toast.LENGTH_SHORT).show();
 
-        }
-		return true;
+        }*/
+		return false;
 	}
 
     @Override

@@ -34,9 +34,7 @@ public class Categorias extends android.support.v4.app.Fragment{
             {"Carnes", "Pescados", "Verduras", "Pastas", "Postres"}, //Por alimento
     };
 
-	public Categorias() {
-		// Required empty public constructor
-	}
+	public Categorias(){}//Constructor
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -50,7 +48,7 @@ public class Categorias extends android.support.v4.app.Fragment{
 	
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
+
 		super.onActivityCreated(savedInstanceState);
 
         //Lista Expandible con su Adaptador
@@ -63,6 +61,7 @@ public class Categorias extends android.support.v4.app.Fragment{
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
 
+                //Intent para enviar el elemento selccionado del segundo nivel de la lista expandible.
                 Intent intent = new Intent(getActivity(), TipoReceta.class);
                 intent.putExtra("elemento",segundoNivel[groupPosition][childPosition].toString());
                 startActivity(intent);
@@ -79,7 +78,7 @@ public class Categorias extends android.support.v4.app.Fragment{
 
         public MiAdaptadorEx(Context context){this.context=context;}
 
-        @Override
+        @Override //Primer nivel de la lista expandible.
         public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
 
             TextView tV = new TextView(context);
@@ -91,7 +90,7 @@ public class Categorias extends android.support.v4.app.Fragment{
             return tV;
         }
 
-        @Override
+        @Override //Segundo nivel de la lista expandible.
         public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
            // CustomExpListView SegundoNivelExLv = new CustomExpListView(context);
 
@@ -105,10 +104,10 @@ public class Categorias extends android.support.v4.app.Fragment{
         }
 
         @Override
-        public int getGroupCount(){return primerNivel.length;}
+        public int getGroupCount(){return primerNivel.length;}//Recoge la longitud del array de primer nivel
 
         @Override
-        public int getChildrenCount(int groupPosition){return segundoNivel[groupPosition].length;}
+        public int getChildrenCount(int groupPosition){return segundoNivel[groupPosition].length;}////Recoge la longitud del array de segundo nivel
 
         @Override
         public Object getGroup(int groupPosition){return groupPosition;}

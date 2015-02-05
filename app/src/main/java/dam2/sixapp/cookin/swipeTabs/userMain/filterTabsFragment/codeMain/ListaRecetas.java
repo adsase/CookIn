@@ -22,15 +22,12 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-
 import dam2.sixapp.cookin.R;
 import dam2.sixapp.cookin.recipes.recipeModeSelector;
 
-
+//Activity que viene del fragment Avanzadas.
 public class ListaRecetas extends Activity implements AdapterView.OnItemClickListener{//avanzadas
 
-    TextView textViewDura, textViewDifi, textViewZo, textViewAli;
     private ListView list;
     String duraLink, difiLink, zonaLink, aliLink, tipoAliLink, dura2, difi2, zona2, ali2, tipoAli2, url, nombre, imageURL;
     private String[] recetas, recetasURL;
@@ -48,7 +45,7 @@ public class ListaRecetas extends Activity implements AdapterView.OnItemClickLis
         duraLink = b.getString("duracionLink");
         difiLink = b.getString("dificultadLink");
         zonaLink = b.getString("zonaLink");
-        aliLink = b.getString("catLink");
+        aliLink = b.getString("alimentoLink");
         tipoAliLink="";
 
 
@@ -67,20 +64,14 @@ public class ListaRecetas extends Activity implements AdapterView.OnItemClickLis
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+
         getMenuInflater().inflate(R.menu.menu_lista_recetas, menu);
         return true;
+
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
-        //int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        /*if (id == R.id.action_settings) {
-            return true;
-        }*/
 
         return false;
     }
@@ -145,6 +136,7 @@ public class ListaRecetas extends Activity implements AdapterView.OnItemClickLis
         protected void onPostExecute(Boolean result) {
 
             if (result) {
+
                 //Rellenamos la lista con los nombres de las recetas
                 //Rellenamos la lista con los resultados
                 ArrayAdapter<String> adaptador =

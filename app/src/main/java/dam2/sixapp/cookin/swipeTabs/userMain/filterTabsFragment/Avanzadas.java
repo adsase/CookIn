@@ -4,6 +4,7 @@ package dam2.sixapp.cookin.swipeTabs.userMain.filterTabsFragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,16 +20,17 @@ import dam2.sixapp.cookin.R;
 
 public class Avanzadas extends android.support.v4.app.Fragment implements AdapterView.OnItemSelectedListener, View.OnClickListener {
 
-    Spinner spDuracionAvanzadas,spDificultadAvanzadas,spZonaAvanzadas,spAlimentoAvanzadas,spTipoAlimentoAvanzadas;
+    Spinner spDuracionAvanzadas, spDificultadAvanzadas, spZonaAvanzadas, spAlimentoAvanzadas, spTipoAlimentoAvanzadas;
     ArrayAdapter<CharSequence> adaptadorAlimentosAvanzada;
     Button bntAvanzadas;
-    String uno,dos,tres,cuatro,cinco;
+    String uno, dos, tres, cuatro, cinco;
 
 
-    public Avanzadas(){}
+    public Avanzadas() {
+    }//Constructor
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState){
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_avanzadas, container, false);
         return rootView;
@@ -38,40 +40,42 @@ public class Avanzadas extends android.support.v4.app.Fragment implements Adapte
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        bntAvanzadas=(Button)getView().findViewById(R.id.bntAvanzadas);
+        //Boton enviar categorias avanzadas
+        bntAvanzadas = (Button) getView().findViewById(R.id.bntAvanzadas);
         bntAvanzadas.setOnClickListener(this);
 
         //----------------------------Spinners Categorias Avanzadas-------------------------------------------------------------------------
 
         //Por Duracion
-        spDuracionAvanzadas=(Spinner)getView().findViewById(R.id.spDuracionAvanzadas);
-        adaptadorAlimentosAvanzada = ArrayAdapter.createFromResource(getActivity(),R.array.duracion, android.R.layout.simple_spinner_item);
+        spDuracionAvanzadas = (Spinner) getView().findViewById(R.id.spDuracionAvanzadas);
+        adaptadorAlimentosAvanzada = ArrayAdapter.createFromResource(getActivity(), R.array.duracion, android.R.layout.simple_spinner_item);
         adaptadorAlimentosAvanzada.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spDuracionAvanzadas.setAdapter(adaptadorAlimentosAvanzada);
         spDuracionAvanzadas.setOnItemSelectedListener(this);
 
         //Por Dificultad
-        spDificultadAvanzadas=(Spinner)getView().findViewById(R.id.spDificultadAvanzadas);
-        adaptadorAlimentosAvanzada = ArrayAdapter.createFromResource(getActivity(),R.array.dificultad, android.R.layout.simple_spinner_item);
+        spDificultadAvanzadas = (Spinner) getView().findViewById(R.id.spDificultadAvanzadas);
+        adaptadorAlimentosAvanzada = ArrayAdapter.createFromResource(getActivity(), R.array.dificultad, android.R.layout.simple_spinner_item);
         adaptadorAlimentosAvanzada.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spDificultadAvanzadas.setAdapter(adaptadorAlimentosAvanzada);
         spDificultadAvanzadas.setOnItemSelectedListener(this);
 
         //Por Zona Geografica
-        spZonaAvanzadas=(Spinner)getView().findViewById(R.id.spZonaAvanzadas);
-        adaptadorAlimentosAvanzada = ArrayAdapter.createFromResource(getActivity(),R.array.zona, android.R.layout.simple_spinner_item);
+        spZonaAvanzadas = (Spinner) getView().findViewById(R.id.spZonaAvanzadas);
+        adaptadorAlimentosAvanzada = ArrayAdapter.createFromResource(getActivity(), R.array.zona, android.R.layout.simple_spinner_item);
         adaptadorAlimentosAvanzada.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spZonaAvanzadas.setAdapter(adaptadorAlimentosAvanzada);
         spZonaAvanzadas.setOnItemSelectedListener(this);
 
         //Por Alimento
-        spAlimentoAvanzadas=(Spinner)getView().findViewById(R.id.spAlimentoAvanzadas);
-        adaptadorAlimentosAvanzada = ArrayAdapter.createFromResource(getActivity(),R.array.alimento, android.R.layout.simple_spinner_item);
+        spAlimentoAvanzadas = (Spinner) getView().findViewById(R.id.spAlimentoAvanzadas);
+        adaptadorAlimentosAvanzada = ArrayAdapter.createFromResource(getActivity(), R.array.alimento, android.R.layout.simple_spinner_item);
         adaptadorAlimentosAvanzada.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spAlimentoAvanzadas.setAdapter(adaptadorAlimentosAvanzada);
         spAlimentoAvanzadas.setOnItemSelectedListener(this);
 
-        spTipoAlimentoAvanzadas=(Spinner)getView().findViewById(R.id.spTipoAlimentoAvanzadas);
+        spTipoAlimentoAvanzadas = (Spinner) getView().findViewById(R.id.spTipoAlimentoAvanzadas);
+
 
     }//Fin metodo onActivityCreated
 
@@ -86,7 +90,8 @@ public class Avanzadas extends android.support.v4.app.Fragment implements Adapte
 
                 spTipoAlimentoAvanzadas.setEnabled(false);
                 spTipoAlimentoAvanzadas.setVisibility(View.GONE);
-                cinco = spAlimentoAvanzadas.getSelectedItem().toString();
+                spTipoAlimentoAvanzadas.setOnItemSelectedListener(this);
+
 
                 break;
 
@@ -97,7 +102,7 @@ public class Avanzadas extends android.support.v4.app.Fragment implements Adapte
                 spTipoAlimentoAvanzadas.setAdapter(adaptadorAlimentosAvanzada);
                 spTipoAlimentoAvanzadas.setVisibility(View.VISIBLE);
                 spTipoAlimentoAvanzadas.setEnabled(true);
-                cinco = spAlimentoAvanzadas.getSelectedItem().toString();
+
 
                 break;
 
@@ -108,7 +113,7 @@ public class Avanzadas extends android.support.v4.app.Fragment implements Adapte
                 spTipoAlimentoAvanzadas.setAdapter(adaptadorAlimentosAvanzada);
                 spTipoAlimentoAvanzadas.setVisibility(View.VISIBLE);
                 spTipoAlimentoAvanzadas.setEnabled(true);
-                cinco = spAlimentoAvanzadas.getSelectedItem().toString();
+
 
                 break;
 
@@ -119,7 +124,7 @@ public class Avanzadas extends android.support.v4.app.Fragment implements Adapte
                 spTipoAlimentoAvanzadas.setAdapter(adaptadorAlimentosAvanzada);
                 spTipoAlimentoAvanzadas.setVisibility(View.VISIBLE);
                 spTipoAlimentoAvanzadas.setEnabled(true);
-                cinco = spAlimentoAvanzadas.getSelectedItem().toString();
+
 
                 break;
 
@@ -130,7 +135,7 @@ public class Avanzadas extends android.support.v4.app.Fragment implements Adapte
                 spTipoAlimentoAvanzadas.setAdapter(adaptadorAlimentosAvanzada);
                 spTipoAlimentoAvanzadas.setVisibility(View.VISIBLE);
                 spTipoAlimentoAvanzadas.setEnabled(true);
-                cinco = spAlimentoAvanzadas.getSelectedItem().toString();
+
 
                 break;
 
@@ -142,7 +147,7 @@ public class Avanzadas extends android.support.v4.app.Fragment implements Adapte
                 spTipoAlimentoAvanzadas.setAdapter(adaptadorAlimentosAvanzada);
                 spTipoAlimentoAvanzadas.setVisibility(View.VISIBLE);
                 spTipoAlimentoAvanzadas.setEnabled(true);
-                cinco = spAlimentoAvanzadas.getSelectedItem().toString();
+
 
                 break;
         }//Fin switch
@@ -151,7 +156,6 @@ public class Avanzadas extends android.support.v4.app.Fragment implements Adapte
         dos = spDificultadAvanzadas.getSelectedItem().toString();
         tres = spZonaAvanzadas.getSelectedItem().toString();
         cuatro = spAlimentoAvanzadas.getSelectedItem().toString();
-
 
     }//Fin metodo onItemSelected
 
@@ -166,49 +170,34 @@ public class Avanzadas extends android.support.v4.app.Fragment implements Adapte
 
         if(v.getId()==R.id.bntAvanzadas) {
 
-            //Toast.makeText(getActivity(),"Pasara a la activity de la lista de recetas",Toast.LENGTH_SHORT).show();
-
-
             Intent i = new Intent(getActivity(), ListaRecetas.class);
 
             if (!uno.toString().equals("Sin filtro")) {
                 i.putExtra("duracionLink", "dur="+uno.toString());
-                //i.putExtra("duracionString", uno.toString());
             } else {
                 i.putExtra("duracionLink", "");
             }
 
             if (!dos.toString().equals("Sin filtro")){
                 i.putExtra("dificultadLink", "dif='"+dos.toString()+"'");
-                //i.putExtra("dificultadString", dos.toString());
             }else {
                 i.putExtra("dificultadLink", "");
             }
 
             if(!tres.toString().equals("Sin filtro")) {
                 i.putExtra("zonaLink", "zon='"+tres.toString()+"'");
-                //i.putExtra("zonaString", tres.toString());
             }else{
                 i.putExtra("zonaLink", "");
             }
 
             if(!cuatro.toString().equals("Sin filtro")) {
                 i.putExtra("alimentoLink", "ing='"+cuatro.toString()+"'");
-                //i.putExtra("alimentoString", cuatro.toString());
             }else{
                 i.putExtra("alimentoLink","");
             }
 
-            //i.putExtra("tipoAlimento",cinco.toString());
-
-            /*if(cuatro.toString() != ".Sin filtro"){
-                i.putExtra("tipoAlimento",cinco.toString());
-            }else{
-                i.putExtra("tipoAlimento","Ningun alimento seleccionado");
-            }*/
-
             startActivity(i);
-        }//Fin IF
+        }//Fin If
 
     }//Fin metodo onClick
 

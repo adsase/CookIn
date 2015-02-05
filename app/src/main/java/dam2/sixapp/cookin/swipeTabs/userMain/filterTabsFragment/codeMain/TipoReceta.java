@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -29,19 +31,20 @@ import java.util.ArrayList;
 import dam2.sixapp.cookin.R;
 import dam2.sixapp.cookin.recipes.recipeModeSelector;
 
-
+//Activity que viene del fragment Categorias.
 public class TipoReceta extends Activity implements AdapterView.OnItemSelectedListener, AdapterView.OnItemClickListener {
 
     private ListView list;
     Spinner spAlimentos;
     TextView txt1;
 
+
     String nombre,imageURL;
     int id;
     private String[] recetas,recetasURL;
     private int[] arrayid;
 
-
+    //String de conexiones a la BD
     String filtro;
     String conex = "http://cookin.hol.es/android_connect/";
     String php;
@@ -69,62 +72,71 @@ public class TipoReceta extends Activity implements AdapterView.OnItemSelectedLi
         ArrayAdapter<CharSequence> adaptadorAlimentos;
         ArrayList<String> pruebas = new ArrayList<String>();
 
+//---------------------------------Switch de las consultas a la BD-----------------------------------------------------------------
         switch(filtro){
 
-            case "20 mins":
+            case "< 15 mins":
+                spAlimentos.setVisibility(View.GONE);
                 php = "filtro_menor15.php";
                 break;
 
-            case "30 mins":
+            case "15-30 mins":
+                spAlimentos.setVisibility(View.GONE);
                 php = "filtro_menor30.php";
                 break;
 
-            case "60 mins":
+            case "30-60 mins":
+                spAlimentos.setVisibility(View.GONE);
                 php = "filtro_menor60.php";
                 break;
 
-            case "90 mins":
+            case "> 60 mins":
+                spAlimentos.setVisibility(View.GONE);
                 php = "filtro_mayor60.php";
                 break;
 
-            case "120 mins":
-                php = "filtro90.php";
-                break;
-
-
             case "Fácil":
+                spAlimentos.setVisibility(View.GONE);
                 php = "filtro_facil.php";
                 break;
 
             case "Media":
+                spAlimentos.setVisibility(View.GONE);
                 php = "filtro_media.php";
                 break;
 
             case "Difícil":
+                spAlimentos.setVisibility(View.GONE);
                 php = "filtro_dificil.php";
                 break;
 
             case "Europa Este":
+                spAlimentos.setVisibility(View.GONE);
                 php = "filtro_europaeste.php";
                 break;
 
             case "Oriental":
+                spAlimentos.setVisibility(View.GONE);
                 php = "filtro_oriental.php";
                 break;
 
             case "Latina":
+                spAlimentos.setVisibility(View.GONE);
                 php = "filtro_sudamerica.php";
                 break;
 
             case "Mediterránea":
+                spAlimentos.setVisibility(View.GONE);
                 php = "filtro_mediterranea.php";
                 break;
 
             case "Africana":
+                spAlimentos.setVisibility(View.GONE);
                 php = "filtro_africa.php";
                 break;
 
             case "Otros":
+                spAlimentos.setVisibility(View.GONE);
                 php = "filtro_otraszonas.php";
                 break;
 
@@ -158,7 +170,7 @@ public class TipoReceta extends Activity implements AdapterView.OnItemSelectedLi
                 consulta = "?id='Vegetal'";
                 break;
 
-            case "Pastas":
+            case "Pasta":
 
                 txt1.setText("Elegir tipo pasta:");
                 adaptadorAlimentos = ArrayAdapter.createFromResource(this,R.array.pasta, android.R.layout.simple_spinner_item);
@@ -180,7 +192,6 @@ public class TipoReceta extends Activity implements AdapterView.OnItemSelectedLi
 
             default:
 
-                //txt1.setText("Filtro aplicado: "+filtro);
                 spAlimentos.setActivated(false);
 
         }
@@ -188,9 +199,6 @@ public class TipoReceta extends Activity implements AdapterView.OnItemSelectedLi
         guardaconsulta = consulta;
         mostrar tarea = new mostrar();
         tarea.execute();
-
-        //Toast.makeText(getApplicationContext(), php+consulta, Toast.LENGTH_LONG).show();
-
 
 
     }
@@ -200,7 +208,7 @@ public class TipoReceta extends Activity implements AdapterView.OnItemSelectedLi
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_tipo_receta, menu);
-        MenuItem searchItem= menu.getItem(0);
+        //MenuItem searchItem= menu.getItem(0);
 
         return false;
     }
