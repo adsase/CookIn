@@ -1,15 +1,27 @@
 package dam2.sixapp.cookin.recipes;
 
+import android.os.AsyncTask;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import dam2.sixapp.cookin.R;
 
@@ -19,6 +31,9 @@ public class recipeModeSelector extends ActionBarActivity{
     private Button readButton,assistantButton;
     private ImageView recipeImage;
     private int idReceta;
+
+    String conex = "http://cookin.hol.es/android_connect/";
+    String web="cogerdesc.php?id=";
     private String recipeNameS,difficultyS,durationS,votesS,zoneS,descriptioS,imageUrl;
 
     @Override
@@ -39,6 +54,8 @@ public class recipeModeSelector extends ActionBarActivity{
         assistantButton = (Button) findViewById(R.id.assistantButton);
         Bundle b = getIntent().getExtras();
         idReceta=b.getInt("id");
+        mostrar tarea=new mostrar();
+        tarea.execute();
 
         recipeNameS = "";
         imageUrl = "/** AQUI URL DE IMAGEN **/";
@@ -86,5 +103,64 @@ public class recipeModeSelector extends ActionBarActivity{
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private class mostrar extends AsyncTask<String, Integer, Boolean> {
+
+        @Override
+        protected Boolean doInBackground(String... params) {
+            boolean resul = true;
+
+            HttpClient httpClient = new DefaultHttpClient();
+            HttpPost del = new HttpPost(conex+web+idReceta);
+
+            del.setHeader("content-type", "application/json");
+
+            try {
+                HttpResponse resp = httpClient.execute(del);
+                String respStr = EntityUtils.toString(resp.getEntity());
+                JSONArray respJSON = new JSONArray(respStr);
+               // recetas = new String[respJSON.length()];
+                //arrayid = new int[respJSON.length()];
+
+                for (int i = 0; i < respJSON.length(); i++) {
+                    JSONObject obj = respJSON.getJSONObject(i);
+
+                    descriptioS=obj.getString("DESCRIPCION");
+                    imageUrl=obj.getString("IMAGEN");
+                    recipeNameS=obj.getString("NOMBRE");
+                    difficultyS=obj.getString("DIFICULTAD");
+                    durationS=obj.getString("DURACION");
+                    votesS=obj.getString("VOTOS");
+                    zoneS=obj.getString("ZONA");
+
+                }
+            } catch (Exception ex) {
+                Log.e("ServicioRest", "Error!", ex);
+                resul = false;
+            }
+
+            return resul;
+
+        }
+
+
+        protected void onPostExecute(Boolean result) {
+
+            if (result) {
+
+                    description.setText(descriptioS);
+                    Picasso.with(getApplicationContext()).load(imageUrl).into(recipeImage);
+                    recipeName.setText(recipeNameS);
+                    difficulty.setText("Dificultad: "+difficultyS);
+                    duration.setText("Duración: "+durationS+"'");
+                    zone.setText("Zona: "+zoneS);
+                    votes.setText("Votos: "+votesS);
+
+            }else{
+                Toast.makeText(getApplicationContext(), "Se ha producido un error al realizar la consulta", Toast.LENGTH_LONG).show();
+            }
+        }
+
     }
 }

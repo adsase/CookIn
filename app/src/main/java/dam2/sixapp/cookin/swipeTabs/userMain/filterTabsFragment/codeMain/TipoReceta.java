@@ -47,6 +47,7 @@ public class TipoReceta extends Activity implements AdapterView.OnItemSelectedLi
     String php;
     String consulta ="";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -236,7 +237,7 @@ public class TipoReceta extends Activity implements AdapterView.OnItemSelectedLi
         int index =Math.round(x);
         int idrec=arrayid[index];
 
-        Toast.makeText(getApplicationContext(),"ID: "+idrec,Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(),"ID: "+idrec,Toast.LENGTH_SHORT).show();
 
         Intent i = new Intent(getApplicationContext(),recipeModeSelector.class);
 
