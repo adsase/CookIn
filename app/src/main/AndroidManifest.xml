@@ -61,6 +61,10 @@
             android:name=".recipes.recipeAssistant"
             android:label="@string/title_activity_recipe_assistant" >
         </activity>
+        <activity
+            android:name=".demo.Demo"
+            android:label="@string/demo_tuto" >
+        </activity>
     </application>
 
 </manifest>
