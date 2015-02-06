@@ -1,5 +1,6 @@
 package dam2.sixapp.cookin.recipes.activitySteps;
 
+import android.media.AudioManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
@@ -54,7 +56,6 @@ public class StepsActivity extends ActionBarActivity implements View.OnClickList
     static String recipeName;
     int numpaso;
     boolean changed = false;
-    ArrayList<String> suggestedWords;
 
     //voice recognition and general variables
 
@@ -122,8 +123,16 @@ public class StepsActivity extends ActionBarActivity implements View.OnClickList
     @Override
     public void onInit(int initStatus) {
         Locale loc = new Locale("es", "","");
-        if (initStatus == TextToSpeech.SUCCESS)
+        if (initStatus == TextToSpeech.SUCCESS) {
             repeatTTS.setLanguage(loc);
+            repeatTTS.setOnUtteranceCompletedListener(new TextToSpeech.OnUtteranceCompletedListener() {
+                @Override
+                public void onUtteranceCompleted(String utteranceId) {
+                    Log.i("UtteranceCompleted", utteranceId); //utteranceId == "SOME MESSAGE"
+                    listenToSpeech();
+                }
+            });
+        }
     }
 
     /** ASYNC TASK **/
@@ -187,7 +196,7 @@ public class StepsActivity extends ActionBarActivity implements View.OnClickList
                         actualStep--;
                         pasoReceta.setText(recipeNum[actualStep] + ". " + steps[actualStep]);
                         changed = true;
-                        repeatTTS.speak(steps[actualStep], TextToSpeech.QUEUE_FLUSH, null);
+                        speak(steps[actualStep]);
                         if (pauseButton.getText().toString().compareTo(getResources().getString(R.string.start).toString()) == 0) {
                             pauseButton.setText(getResources().getString(R.string.stop).toString());
                         }
@@ -203,7 +212,7 @@ public class StepsActivity extends ActionBarActivity implements View.OnClickList
                     repeatTTS.stop();
                 }else if(pauseButton.getText().toString().compareTo(getResources().getString(R.string.start).toString())==0) {
                         pauseButton.setText(R.string.stop);
-                        repeatTTS.speak(steps[actualStep], TextToSpeech.QUEUE_FLUSH, null);
+                        speak(steps[actualStep]);
                 }
 
                 break;
@@ -213,7 +222,7 @@ public class StepsActivity extends ActionBarActivity implements View.OnClickList
                         actualStep++;
                         pasoReceta.setText(recipeNum[actualStep] + ". " + steps[actualStep]);
                         changed = true;
-                        repeatTTS.speak(steps[actualStep], TextToSpeech.QUEUE_FLUSH, null);
+                        speak(steps[actualStep]);
                         if (pauseButton.getText().toString().compareTo(getResources().getString(R.string.start).toString()) == 0) {
                             pauseButton.setText(R.string.stop);
                         }
@@ -223,13 +232,60 @@ public class StepsActivity extends ActionBarActivity implements View.OnClickList
         }
     }
 
+    public boolean voiceDetectorBack(ArrayList<String> arrayList, String data1) {
+        for (String p : arrayList) {
+            if (p.contains(data1)|p.contains(data1.toLowerCase())|p.contains(data1.toUpperCase())) {
+
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean voiceDetectorNext(ArrayList<String> arrayList, String data1) {
+        for (String p : arrayList) {
+            if (p.contains(data1)|p.contains(data1.toLowerCase())|p.contains(data1.toUpperCase())) {
+
+                return true;
+            }
+        }
+        return false;
+    }
+
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         //check speech recognition result
         if (requestCode == VR_REQUEST && resultCode == RESULT_OK)
         {
             //store the returned word list as an ArrayList
             /** palabras recogidas por el reconocimiento **/
-            suggestedWords = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+            ArrayList<String> suggestedWords = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+            String [ ] palabras = suggestedWords.get(0).toString().split(" ");
+            if(voiceDetectorBack(suggestedWords,"Anterior")){
+                if(actualStep>0) {
+                    if(pauseButton.getText().toString().compareTo(getResources().getString(R.string.stop).toString())==0) {
+                        actualStep--;
+                        pasoReceta.setText(recipeNum[actualStep] + ". " + steps[actualStep]);
+                        changed = true;
+                        speak(steps[actualStep]);
+                        if (pauseButton.getText().toString().compareTo(getResources().getString(R.string.start).toString()) == 0) {
+                            pauseButton.setText(getResources().getString(R.string.stop).toString());
+                        }
+                    }
+                }
+            }
+            if(voiceDetectorNext(suggestedWords,"Siguiente")){
+                if(actualStep<steps.length-1) {
+                    if(pauseButton.getText().toString().compareTo(getResources().getString(R.string.stop).toString())==0) {
+                        actualStep++;
+                        pasoReceta.setText(recipeNum[actualStep] + ". " + steps[actualStep]);
+                        changed = true;
+                        speak(steps[actualStep]);
+                        if (pauseButton.getText().toString().compareTo(getResources().getString(R.string.start).toString()) == 0) {
+                            pauseButton.setText(R.string.stop);
+                        }
+                    }
+                }
+            }
             //set the retrieved list to display in the ListView using an ArrayAdapter
             //wordList.setAdapter(new ArrayAdapter<String> (this, R.layout.word, suggestedWords));
 
@@ -272,5 +328,14 @@ public class StepsActivity extends ActionBarActivity implements View.OnClickList
 
         //start listening
         startActivityForResult(listenIntent, VR_REQUEST);
+    }
+
+    private void speak(String text) {
+        if(text != null) {
+            HashMap<String, String> myHashAlarm = new HashMap<String, String>();
+            myHashAlarm.put(TextToSpeech.Engine.KEY_PARAM_STREAM, String.valueOf(AudioManager.STREAM_ALARM));
+            myHashAlarm.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, "SOME MESSAGE");
+            repeatTTS.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+        }
     }
 }
