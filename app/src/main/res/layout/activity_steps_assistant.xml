@@ -17,7 +17,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView14"
-            android:text="Receta Titulo"
             android:textSize="30dp" />
 
     </LinearLayout>
@@ -43,7 +42,6 @@
                 android:layout_height="fill_parent"
                 android:id="@+id/textView16"
                 android:gravity="center"
-                android:text="1. Paso uno"
                 android:textSize="40dp" />
 
         </LinearLayout>
@@ -65,19 +63,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/button3"
-            android:text="Anterior" />
+            android:text="@string/backButton" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button4"
-            android:text="Pausa" />
+            android:id="@+id/button4" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/button5"
-            android:text="Siguiente" />
+            android:text="@string/nextButton" />
     </LinearLayout>
 
 </LinearLayout>
