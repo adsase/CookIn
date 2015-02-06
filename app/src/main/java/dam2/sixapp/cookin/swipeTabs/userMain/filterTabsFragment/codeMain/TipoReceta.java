@@ -172,7 +172,7 @@ public class TipoReceta extends Activity implements AdapterView.OnItemSelectedLi
                 consulta = "?id='Vegetal'";
                 break;
 
-            case "Pasta":
+            case "Pastas":
 
                 txt1.setText("Elegir tipo pasta:");
                 adaptadorAlimentos = ArrayAdapter.createFromResource(this,R.array.pasta, android.R.layout.simple_spinner_item);
@@ -217,9 +217,7 @@ public class TipoReceta extends Activity implements AdapterView.OnItemSelectedLi
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
@@ -248,7 +246,7 @@ public class TipoReceta extends Activity implements AdapterView.OnItemSelectedLi
     }
 
     @Override
-    public void onNothingSelected(AdapterView<?> parent) {
+    public void onNothingSelected(AdapterView<?> parent){
 
     }
 
