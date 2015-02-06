@@ -75,24 +75,29 @@ public class TipoReceta extends Activity implements AdapterView.OnItemSelectedLi
 //---------------------------------Switch de las consultas a la BD-----------------------------------------------------------------
         switch(filtro){
 
-            case "< 15 mins":
+            case "20 mins":
                 spAlimentos.setVisibility(View.GONE);
                 php = "filtro_menor15.php";
                 break;
 
-            case "15-30 mins":
+            case "30 mins":
                 spAlimentos.setVisibility(View.GONE);
                 php = "filtro_menor30.php";
                 break;
 
-            case "30-60 mins":
+            case "60 mins":
                 spAlimentos.setVisibility(View.GONE);
                 php = "filtro_menor60.php";
                 break;
 
-            case "> 60 mins":
+            case "90 mins":
                 spAlimentos.setVisibility(View.GONE);
                 php = "filtro_mayor60.php";
+                break;
+
+            case "120 mins":
+                spAlimentos.setVisibility(View.GONE);
+                php = "filtro90.php";
                 break;
 
             case "Fácil":

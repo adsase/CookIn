@@ -33,7 +33,9 @@ public class recipeModeSelector extends ActionBarActivity implements View.OnClic
     private TextView recipeName,difficulty,duration,votes,zone,description;
     private Button readButton,assistantButton;
     private ImageView recipeImage;
-    private int idReceta;
+
+
+    static int idReceta;
 
     String conex = "http://cookin.hol.es/android_connect/";
     String web="cogerdesc.php?id=";
@@ -81,6 +83,9 @@ public class recipeModeSelector extends ActionBarActivity implements View.OnClic
         votes.setText(getResources().getString(R.string.votes)+" "+votesS);
         zone.setText(getResources().getString(R.string.zone)+" "+zoneS);
         description.setText(descriptioS);
+
+        Contador con = new Contador(recipeModeSelector.this);
+        con.execute();
     }
 
 
@@ -188,4 +193,11 @@ public class recipeModeSelector extends ActionBarActivity implements View.OnClic
         }
 
     }
+
+    public int getIdReceta() {
+        return idReceta;
+    }
+
+
+
 }

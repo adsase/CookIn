@@ -191,7 +191,7 @@ public class Avanzadas extends android.support.v4.app.Fragment implements Adapte
             }
 
             if(!cuatro.toString().equals("Sin filtro")) {
-                i.putExtra("alimentoLink", "ing='"+cuatro.toString()+"'");
+                i.putExtra("alimentoLink", "cat='"+cuatro.toString()+"'");
             }else{
                 i.putExtra("alimentoLink","");
             }

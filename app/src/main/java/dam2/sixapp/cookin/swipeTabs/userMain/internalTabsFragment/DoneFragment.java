@@ -1,12 +1,24 @@
 package dam2.sixapp.cookin.swipeTabs.userMain.internalTabsFragment;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -15,11 +27,11 @@ import dam2.sixapp.cookin.customList.CustomListAdapter;
 import dam2.sixapp.cookin.customList.NewsItem;
 
 public class DoneFragment extends Fragment {
- 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
- 
+                             Bundle savedInstanceState) {
+
         View rootView = inflater.inflate(R.layout.fragment_done, container, false);
 
         ArrayList image_details = getListData();
@@ -61,5 +73,6 @@ public class DoneFragment extends Fragment {
 
         return results;
     }
- 
+
 }
+
