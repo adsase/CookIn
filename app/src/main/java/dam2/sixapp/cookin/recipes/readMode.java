@@ -39,7 +39,7 @@ public class readMode extends ActionBarActivity implements View.OnClickListener{
     static float votos;
     String con="http://cookin.hol.es/android_connect/";
     String web="pasos.php?id=";
-    String[]totpasos;
+    String[] totpasos;
     int numpaso;
 
     @Override

@@ -26,6 +26,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import dam2.sixapp.cookin.R;
+import dam2.sixapp.cookin.recipes.activitySteps.StepsActivity;
 
 public class recipeModeSelector extends ActionBarActivity implements View.OnClickListener{
 
@@ -53,12 +54,13 @@ public class recipeModeSelector extends ActionBarActivity implements View.OnClic
         zone = (TextView) findViewById(R.id.zone);
         description = (TextView) findViewById(R.id.description);
         readButton = (Button) findViewById(R.id.readButton);
-        readButton.setOnClickListener(this);
         assistantButton = (Button) findViewById(R.id.assistantButton);
         Bundle b = getIntent().getExtras();
         idReceta=b.getInt("id");
         mostrar tarea=new mostrar();
         tarea.execute();
+        readButton.setOnClickListener(this);
+        assistantButton.setOnClickListener(this);
 
         recipeNameS = "";
         imageUrl = "/** AQUI URL DE IMAGEN **/";
@@ -67,7 +69,6 @@ public class recipeModeSelector extends ActionBarActivity implements View.OnClic
         votesS = "";
         zoneS = "";
         descriptioS = "";
-
 
         recipeName.setText(recipeNameS);
         if(imageUrl == null) {
@@ -80,8 +81,6 @@ public class recipeModeSelector extends ActionBarActivity implements View.OnClic
         votes.setText(getResources().getString(R.string.votes)+" "+votesS);
         zone.setText(getResources().getString(R.string.zone)+" "+zoneS);
         description.setText(descriptioS);
-
-
     }
 
 
@@ -110,10 +109,18 @@ public class recipeModeSelector extends ActionBarActivity implements View.OnClic
 
     @Override
     public void onClick(View v) {
-        if(v.getId()==R.id.readButton){
-            Intent i=new Intent(getApplicationContext(),readMode.class);
-            i.putExtra("id",idReceta);
-            startActivity(i);
+        switch(v.getId()){
+            case R.id.readButton:
+                Intent i=new Intent(getApplicationContext(),readMode.class);
+                i.putExtra("id",idReceta);
+                startActivity(i);
+                break;
+            case R.id.assistantButton:
+                Intent u=new Intent(getApplicationContext(),StepsActivity.class);
+                u.putExtra("id",idReceta);
+                u.putExtra("recipeName",recipeNameS);
+                startActivity(u);
+                break;
         }
     }
 

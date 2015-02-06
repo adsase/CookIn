@@ -17,7 +17,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView14"
-            android:text="Receta Titulo" />
+            android:text="Receta Titulo"
+            android:textSize="30dp" />
 
     </LinearLayout>
 
@@ -42,7 +43,8 @@
                 android:layout_height="fill_parent"
                 android:id="@+id/textView16"
                 android:gravity="center"
-                android:text="1. Paso uno" />
+                android:text="1. Paso uno"
+                android:textSize="40dp" />
 
         </LinearLayout>
     </ScrollView>

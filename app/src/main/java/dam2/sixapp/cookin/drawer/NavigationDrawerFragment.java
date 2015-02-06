@@ -27,7 +27,6 @@ import dam2.sixapp.cookin.R;
 import dam2.sixapp.cookin.about.About;
 import dam2.sixapp.cookin.collaborate.Collaborate;
 import dam2.sixapp.cookin.demo.Demo;
-import dam2.sixapp.cookin.recipes.recipeAssistant;
 import dam2.sixapp.cookin.swipeTabs.userMain.MainActivity;
 import dam2.sixapp.cookin.swipeTabs.userMain.Recetas;
 
@@ -233,7 +232,7 @@ public class NavigationDrawerFragment extends Fragment {
 //                startActivity(new Intent(this.getActivity(), Collaborate.class));//RECETAS PREMIUM
                 break;
             case 6:
-                startActivity(new Intent(this.getActivity(), recipeAssistant.class));//AJUSTES
+                //startActivity(new Intent(this.getActivity(), recipeAssistant.class));//AJUSTES
                 break;
             case 7:
                 startActivity(new Intent(this.getActivity(), About.class));
