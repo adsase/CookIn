@@ -2,4 +2,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="dam2.sixapp.cookin.recipes.recipeModeSelector">
+    <item android:id="@+id/favorite" android:title="@string/favoritos"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/todo" android:title="@string/pendiente"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/done" android:title="@string/hecho"
+        android:orderInCategory="100" app:showAsAction="never" />
 </menu>

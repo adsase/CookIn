@@ -100,8 +100,14 @@ public class recipeModeSelector extends ActionBarActivity implements View.OnClic
 
         switch (item.getItemId()) {
             // Respond to the action bar's Up/Home button
-            case android.R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
+            case R.id.favorite:
+                //Accion
+                return true;
+            case R.id.todo:
+                //Accion
+                return true;
+            case R.id.done:
+                //Accion
                 return true;
         }
         return super.onOptionsItemSelected(item);
