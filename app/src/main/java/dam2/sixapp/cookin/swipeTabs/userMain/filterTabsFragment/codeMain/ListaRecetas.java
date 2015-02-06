@@ -1,9 +1,10 @@
 package dam2.sixapp.cookin.swipeTabs.userMain.filterTabsFragment.codeMain;
 
-import android.app.Activity;
+
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,7 +12,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.apache.http.HttpResponse;
@@ -26,7 +26,7 @@ import dam2.sixapp.cookin.R;
 import dam2.sixapp.cookin.recipes.recipeModeSelector;
 
 //Activity que viene del fragment Avanzadas.
-public class ListaRecetas extends Activity implements AdapterView.OnItemClickListener{//avanzadas
+public class ListaRecetas extends ActionBarActivity implements AdapterView.OnItemClickListener{//avanzadas
 
     private ListView list;
     String duraLink, difiLink, zonaLink, aliLink, tipoAliLink, dura2, difi2, zona2, ali2, tipoAli2, url, nombre, imageURL;
@@ -39,6 +39,10 @@ public class ListaRecetas extends Activity implements AdapterView.OnItemClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        final android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        //actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setTitle("Búsqueda receta");
+
         setContentView(R.layout.activity_lista_recetas);
 
         Bundle b = getIntent().getExtras();
@@ -46,13 +50,13 @@ public class ListaRecetas extends Activity implements AdapterView.OnItemClickLis
         difiLink = b.getString("dificultadLink");
         zonaLink = b.getString("zonaLink");
         aliLink = b.getString("alimentoLink");
-        tipoAliLink="";
+        tipoAliLink=b.getString("tipoalimentoLink");
 
 
         list = (ListView)findViewById(R.id.list);
         list.setOnItemClickListener(this);
 
-        url = ("http://cookin.hol.es/android_connect/filtros_avanzados.php?"+aliLink+"&"+duraLink+"&"+difiLink+"&"+zonaLink);
+        url = ("http://cookin.hol.es/android_connect/filtros_avanzados.php?"+aliLink+"&"+duraLink+"&"+difiLink+"&"+zonaLink+"&"+tipoAliLink);
         Toast.makeText(getApplicationContext(), url, Toast.LENGTH_LONG).show();
 
         mostrar m = new mostrar();

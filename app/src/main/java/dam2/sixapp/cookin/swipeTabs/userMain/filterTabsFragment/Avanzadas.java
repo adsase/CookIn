@@ -83,74 +83,128 @@ public class Avanzadas extends android.support.v4.app.Fragment implements Adapte
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
 
-        //---------------------------------Switch de los tipos de alimentos------------------------------------------------------------------------
-        switch (spAlimentoAvanzadas.getSelectedItem().toString()) {
+        //Spinner tipo alimento que depende del alimento.
 
-            case "Sin filtro":
+        //Sin filtro
+        if(spAlimentoAvanzadas.getSelectedItem().toString().equals("Sin filtro")){
 
-                spTipoAlimentoAvanzadas.setEnabled(false);
-                spTipoAlimentoAvanzadas.setVisibility(View.GONE);
-                spTipoAlimentoAvanzadas.setOnItemSelectedListener(this);
+            spTipoAlimentoAvanzadas.setEnabled(false);
+            spTipoAlimentoAvanzadas.setVisibility(View.GONE);
 
+        }
 
-                break;
+        //Carne
+        if(spAlimentoAvanzadas.getSelectedItem().toString().equals("Carne")){
+            adaptadorAlimentosAvanzada = ArrayAdapter.createFromResource(getActivity(),R.array.carnes, android.R.layout.simple_spinner_item);
+            adaptadorAlimentosAvanzada.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spTipoAlimentoAvanzadas.setAdapter(adaptadorAlimentosAvanzada);
+            spTipoAlimentoAvanzadas.setVisibility(View.VISIBLE);
+            spTipoAlimentoAvanzadas.setEnabled(true);
+            spTipoAlimentoAvanzadas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-            case "Carne":
+                    cinco = spTipoAlimentoAvanzadas.getSelectedItem().toString();
+                    Toast.makeText(getActivity(),"Esto "+cinco,Toast.LENGTH_SHORT).show();
 
-                adaptadorAlimentosAvanzada = ArrayAdapter.createFromResource(getActivity(),R.array.carnes, android.R.layout.simple_spinner_item);
-                adaptadorAlimentosAvanzada.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                spTipoAlimentoAvanzadas.setAdapter(adaptadorAlimentosAvanzada);
-                spTipoAlimentoAvanzadas.setVisibility(View.VISIBLE);
-                spTipoAlimentoAvanzadas.setEnabled(true);
+                }
 
-
-                break;
-
-            case "Pescado":
-
-                adaptadorAlimentosAvanzada = ArrayAdapter.createFromResource(getActivity(),R.array.pescados, android.R.layout.simple_spinner_item);
-                adaptadorAlimentosAvanzada.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                spTipoAlimentoAvanzadas.setAdapter(adaptadorAlimentosAvanzada);
-                spTipoAlimentoAvanzadas.setVisibility(View.VISIBLE);
-                spTipoAlimentoAvanzadas.setEnabled(true);
-
-
-                break;
-
-            case "Vegetal":
-
-                adaptadorAlimentosAvanzada = ArrayAdapter.createFromResource(getActivity(),R.array.verduras, android.R.layout.simple_spinner_item);
-                adaptadorAlimentosAvanzada.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                spTipoAlimentoAvanzadas.setAdapter(adaptadorAlimentosAvanzada);
-                spTipoAlimentoAvanzadas.setVisibility(View.VISIBLE);
-                spTipoAlimentoAvanzadas.setEnabled(true);
+                @Override
+                public void onNothingSelected(AdapterView<?> parent){}
+            });
+        }
 
 
-                break;
+        //Pescado
+        if(spAlimentoAvanzadas.getSelectedItem().toString().equals("Pescado")){
 
-            case "Pasta":
+            adaptadorAlimentosAvanzada = ArrayAdapter.createFromResource(getActivity(),R.array.pescados, android.R.layout.simple_spinner_item);
+            adaptadorAlimentosAvanzada.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spTipoAlimentoAvanzadas.setAdapter(adaptadorAlimentosAvanzada);
+            spTipoAlimentoAvanzadas.setVisibility(View.VISIBLE);
+            spTipoAlimentoAvanzadas.setEnabled(true);
+            spTipoAlimentoAvanzadas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                adaptadorAlimentosAvanzada = ArrayAdapter.createFromResource(getActivity(),R.array.pasta, android.R.layout.simple_spinner_item);
-                adaptadorAlimentosAvanzada.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                spTipoAlimentoAvanzadas.setAdapter(adaptadorAlimentosAvanzada);
-                spTipoAlimentoAvanzadas.setVisibility(View.VISIBLE);
-                spTipoAlimentoAvanzadas.setEnabled(true);
+                    cinco = spTipoAlimentoAvanzadas.getSelectedItem().toString();
+                    Toast.makeText(getActivity(),"Esto "+cinco,Toast.LENGTH_SHORT).show();
 
+                }
 
-                break;
+                @Override
+                public void onNothingSelected(AdapterView<?> parent){}
+            });
 
+        }
 
-            case "Postres":
+        //Vegetal
+        if(spAlimentoAvanzadas.getSelectedItem().toString().equals("Vegetal")){
 
-                adaptadorAlimentosAvanzada = ArrayAdapter.createFromResource(getActivity(),R.array.postres, android.R.layout.simple_spinner_item);
-                adaptadorAlimentosAvanzada.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                spTipoAlimentoAvanzadas.setAdapter(adaptadorAlimentosAvanzada);
-                spTipoAlimentoAvanzadas.setVisibility(View.VISIBLE);
-                spTipoAlimentoAvanzadas.setEnabled(true);
+            adaptadorAlimentosAvanzada = ArrayAdapter.createFromResource(getActivity(),R.array.verduras, android.R.layout.simple_spinner_item);
+            adaptadorAlimentosAvanzada.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spTipoAlimentoAvanzadas.setAdapter(adaptadorAlimentosAvanzada);
+            spTipoAlimentoAvanzadas.setVisibility(View.VISIBLE);
+            spTipoAlimentoAvanzadas.setEnabled(true);
+            spTipoAlimentoAvanzadas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
+                    cinco = spTipoAlimentoAvanzadas.getSelectedItem().toString();
+                    Toast.makeText(getActivity(),"Esto "+cinco,Toast.LENGTH_SHORT).show();
 
-                break;
-        }//Fin switch
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parent){}
+            });
+
+        }
+
+        //Pasta
+        if(spAlimentoAvanzadas.getSelectedItem().toString().equals("Pasta")){
+
+            adaptadorAlimentosAvanzada = ArrayAdapter.createFromResource(getActivity(),R.array.pasta, android.R.layout.simple_spinner_item);
+            adaptadorAlimentosAvanzada.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spTipoAlimentoAvanzadas.setAdapter(adaptadorAlimentosAvanzada);
+            spTipoAlimentoAvanzadas.setVisibility(View.VISIBLE);
+            spTipoAlimentoAvanzadas.setEnabled(true);
+            spTipoAlimentoAvanzadas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                    cinco = spTipoAlimentoAvanzadas.getSelectedItem().toString();
+                    Toast.makeText(getActivity(),"Esto "+cinco,Toast.LENGTH_SHORT).show();
+
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parent){}
+            });
+        }
+
+        //Postres
+        if(spAlimentoAvanzadas.getSelectedItem().toString().equals("Postres")){
+
+            adaptadorAlimentosAvanzada = ArrayAdapter.createFromResource(getActivity(),R.array.postres, android.R.layout.simple_spinner_item);
+            adaptadorAlimentosAvanzada.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spTipoAlimentoAvanzadas.setAdapter(adaptadorAlimentosAvanzada);
+            spTipoAlimentoAvanzadas.setVisibility(View.VISIBLE);
+            spTipoAlimentoAvanzadas.setEnabled(true);
+            spTipoAlimentoAvanzadas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                    cinco = spTipoAlimentoAvanzadas.getSelectedItem().toString();
+                    Toast.makeText(getActivity(),"Esto "+cinco,Toast.LENGTH_SHORT).show();
+
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parent){}
+            });
+
+        }
 
         uno = spDuracionAvanzadas.getSelectedItem().toString();
         dos = spDificultadAvanzadas.getSelectedItem().toString();
@@ -159,12 +213,11 @@ public class Avanzadas extends android.support.v4.app.Fragment implements Adapte
 
     }//Fin metodo onItemSelected
 
-
     @Override
-    public void onNothingSelected(AdapterView<?> parent) {
+    public void onNothingSelected(AdapterView<?> parent){}
 
-    }
 
+    //-----------------------------------------------onClick------------------------------------------------------------------------------------------
     @Override
     public void onClick(View v) {
 
@@ -195,6 +248,12 @@ public class Avanzadas extends android.support.v4.app.Fragment implements Adapte
             }else{
                 i.putExtra("alimentoLink","");
             }
+            if(!cinco.toString().equals("Sin filtro")) {
+                i.putExtra("tipoalimentoLink", "ing='"+cinco.toString()+"'");
+            }else{
+                i.putExtra("tipoalimentoLink","");
+            }
+
 
             startActivity(i);
         }//Fin If
