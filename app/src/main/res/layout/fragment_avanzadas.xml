@@ -25,7 +25,7 @@
             <TextView
                 android:layout_width="190dp"
                 android:layout_height="match_parent"
-                android:text="Por minutos (aprox.):"
+                android:text="@string/byMin"
                 android:id="@+id/textView"
                 android:gravity="center_vertical"
                 android:textSize="20dp"
@@ -51,7 +51,7 @@
             <TextView
                 android:layout_width="190dp"
                 android:layout_height="match_parent"
-                android:text="Por dificultad:"
+                android:text="@string/byDif"
                 android:id="@+id/textView2"
                 android:textSize="20dp"
                 android:textStyle="bold|italic"
@@ -76,7 +76,7 @@
             <TextView
                 android:layout_width="190dp"
                 android:layout_height="match_parent"
-                android:text="Por zona:        "
+                android:text="@string/byZone"
                 android:id="@+id/textView3"
                 android:textSize="20dp"
                 android:textStyle="bold|italic"
@@ -101,7 +101,7 @@
             <TextView
                 android:layout_width="190dp"
                 android:layout_height="match_parent"
-                android:text="Por alimento:  "
+                android:text="@string/byAlim"
                 android:id="@+id/textView4"
                 android:textSize="20dp"
                 android:textStyle="bold|italic"
@@ -126,7 +126,7 @@
             <TextView
                 android:layout_width="190dp"
                 android:layout_height="match_parent"
-                android:text="Tipo alimento:    "
+                android:text="@string/byTypeAlim"
                 android:id="@+id/textView5"
                 android:textSize="20dp"
                 android:gravity="center_vertical"
@@ -150,7 +150,7 @@
             <Button
                 android:layout_width="160dp"
                 android:layout_height="60dp"
-                android:text="Buscar"
+                android:text="@string/searchButton1"
                 android:id="@+id/bntAvanzadas"
                 android:textColor="#ffffff"
                 android:textStyle="bold|italic"

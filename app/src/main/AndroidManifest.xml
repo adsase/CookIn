@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".GooglePlus"
-            android:label="Cookin">
+            android:label="@string/g_plus">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -52,10 +52,10 @@
         </activity>
         <activity
             android:name=".recipes.readMode"
-            android:label="readMode"></activity>
+            android:label="@string/readMode"></activity>
         <activity
             android:name=".recipes.activitySteps.StepsActivity"
-            android:label="assistant"></activity>
+            android:label="@string/assistant"></activity>
         <activity
             android:name=".demo.Demo"
             android:label="@string/demo_tuto"></activity>

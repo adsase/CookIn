@@ -14,11 +14,10 @@
     <string name="cat_receta">Categoría</string>
     <string name="btn_receta">Enviar</string>
     <string name="colabora_main">Colabora</string>
-    <string name="about_main">About</string>
+    <string name="about_main">Acerca de</string>
 
     <!-- Otros -->
 
-    <string name="app_name" translatable="false">Cookin</string>
     <string name="g_plus">Google Plus</string>
     <string name="favoritos">Favoritos</string>
     <string name="pendiente">Pendiente</string>
@@ -34,8 +33,8 @@
     <string name="about">Acerca de CookIn</string>
     <string name="action_settings">Ajustes</string>
     <string name="title_activity_main_drawer">Navigation Drawer</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open">Abrir drawer</string>
+    <string name="navigation_drawer_close">Cerrar drawer</string>
     <string name="readMode">Modo lectura</string>
     <string name="assistant">Modo asistente</string>
 
@@ -155,28 +154,21 @@
     <string name="start">Empezar</string>
     <string name="stop">Parar</string>
     <string name="nextButton">Siguiente</string>
-
-    <!-- Resto -->
-    <string name="byMin">Por minutos (aprox.):</string>
-    <string name="byDif">Por dificultad:</string>
-    <string name="byZone">Por zona:</string>
     <string name="byAlim">Por alimento:</string>
+    <string name="byDif">Por dificultad:</string>
+    <string name="byMin">Por minutos (aprox.):</string>
     <string name="byTypeAlim">Tipo alimento:</string>
-    <string name="searchButton1">Buscar</string>
-    <string name="proximamente">Próximamente</string>
-    <string name="valorate">Valora</string>
-
-    <!-- ListROwLayout -->
-    <string name="title">Titulo</string>
+    <string name="byZone">Por zona:</string>
     <string name="duracion">Duración</string>
-    <string name="puntuacion">Puntuación</string>
     <string name="nacionalidad">Nacionalidad</string>
-
-    <!-- More -->
-    <string name="perDur">Por Duración</string>
-    <string name="perDif">Por Dificultad</string>
-    <string name="perGeo">Por Zona Geográfica</string>
+    <string name="proximamente">Próximamente</string>
+    <string name="puntuacion">Puntuación</string>
+    <string name="searchButton1">Buscar</string>
+    <string name="title">Titulo</string>
+    <string name="valorate">Valora</string>
     <string name="perAli">Por Alimento</string>
-
+    <string name="perDif">Por Dificultad</string>
+    <string name="perDur">Por Duración</string>
+    <string name="perGeo">Por Zona Geográfica</string>
 
 </resources>

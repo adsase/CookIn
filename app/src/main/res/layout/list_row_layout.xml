@@ -46,7 +46,7 @@
                     android:layout_toRightOf="@+id/image"
                     android:textSize="@dimen/title"
                     android:textStyle="bold"
-                    android:text="Titulo"
+                    android:text="@string/title"
                     android:gravity="center"/>
 
                 <View
@@ -74,7 +74,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:text="Duración"
+                            android:text="@string/duracion"
                             android:id="@+id/textView"
                             android:textAlignment="center"
                             android:gravity="center"/>
@@ -87,7 +87,7 @@
                             android:layout_alignParentRight="true"
                             android:layout_marginTop="5dip"
                             android:textSize="@dimen/time"
-                            android:text="1 H"
+                            android:text="@string/duracion"
                             android:gravity="center"
                             android:textStyle="bold"/>
 
@@ -111,7 +111,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:text="Puntuación"
+                            android:text="@string/puntuacion"
                             android:layout_alignParentBottom="true"
                             android:layout_alignParentRight="true"
                             android:id="@+id/textView2"
@@ -124,7 +124,7 @@
                             android:layout_marginTop="5dip"
                             android:layout_toRightOf="@+id/image"
                             android:textSize="@dimen/rating"
-                            android:text="4.0"
+                            android:text="@string/puntuacion"
                             android:gravity="center"
                             android:textStyle="bold"/>
                     </LinearLayout>
@@ -147,7 +147,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:text="Nacionalidad"
+                            android:text="@string/nacionalidad"
                             android:layout_alignParentBottom="true"
                             android:layout_alignParentRight="true"
                             android:id="@+id/textView3"
@@ -160,7 +160,7 @@
                             android:layout_marginTop="5dp"
                             android:layout_toRightOf="@+id/image"
                             android:textSize="@dimen/nationality"
-                            android:text="India"
+                            android:text="@string/nacionalidad"
                             android:gravity="center"
                             android:textStyle="bold"/>
                     </LinearLayout>

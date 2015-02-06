@@ -24,7 +24,7 @@ public class Categorias extends android.support.v4.app.Fragment{
 	ExpandableListView exList;
 
     //--------------------------------Arrays-Expandable-ListView-----------------------------------------------------------------------
-    static String[] primerNivel = {"Por Duración", "Por Dificultad", "Por Zona Geográfica","Por Alimento"};//Array para el primer nivel.
+    String[] primerNivel = {"Por Duración", "Por Dificultad", "Por Zona Geográfica","Por Alimento"};//Array para el primer nivel.
 
     static String[][]segundoNivel = {//Array para el segundo nivel de la lista expandible
 

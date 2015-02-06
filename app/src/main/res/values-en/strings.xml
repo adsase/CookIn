@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Colabora -->
+
+    <string name="texto_colabora">Send us your own recipes, soon you will find in searches.
+      Fill in the fields below and press the submit button when finished.</string>
+    <string name="nom_receta">Recipe name</string>
+    <string name="ing_receta">Main ingredient</string>
+    <string name="dur_receta">Recipe duration</string>
+    <string name="loc_receta">Geographical area</string>
+    <string name="dif_receta">Recipe difficulty</string>
+    <string name="tex_receta">Recipe description</string>
+    <string name="cat_receta">Category</string>
+    <string name="btn_receta">Send</string>
+    <string name="colabora_main">Collaborate</string>
+    <string name="about_main">About</string>
+
+    <!-- Otros -->
+
+    <string name="g_plus">Google Plus</string>
+    <string name="favoritos">Favorites</string>
+    <string name="pendiente">Pending</string>
+    <string name="hecho">Done</string>
+    <string name="premium">Premium</string>
+    <string name="my_account">My account</string>
+    <string name="recipes">Recipes</string>
+    <string name="colaborate">Collaborate</string>
+    <string name="help">Help</string>
+    <string name="online_shop">Online shopping</string>
+    <string name="premium_recipes">Premium recipes</string>
+    <string name="settings">Settings</string>
+    <string name="about">About CookIn</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main_drawer">Navigation Drawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="readMode">Read mode</string>
+    <string name="assistant">Assistant mode</string>
+
+    <string-array name="tab">
+        <item>Favorites</item>
+        <item>Pending</item>
+        <item>Done</item>
+        <item>Premium</item>
+    </string-array>
+    <string-array name="tabRecetas">
+        <item>Categories</item>
+        <item>Advanced</item>
+        <item>More cooked</item>
+        <item>More valued</item>
+    </string-array>
+
+    <!-- Strings del Spinner Categorias -->
+    <string-array name="carnes"> <!-- Array de los diferentes tipos de carnes del Spinner de alimentos -->
+
+        <item>All</item>
+        <item>Veal</item>
+        <item>Chicken</item>
+        <item>Rabbit</item>
+        <item>Pig</item>
+        <item>Horse</item>
+        <item>Lamb</item>
+        <item>Duck</item>
+        <item>Hen</item>
+        <item>Tripe</item>
+    </string-array>
+    <string-array name="pescados"> <!-- Array de los diferentes tipos de pescados del Spinner de alimentos -->
+
+        <item>All</item>
+        <item>Cod</item>
+        <item>Salmon</item>
+        <item>Sepia</item>
+        <item>Golden</item>
+        <item>Hake</item>
+        <item>Whiting</item>
+        <item>Tuna</item>
+    </string-array>
+    <string-array name="verduras"> <!-- Array de los diferentes tipos de verduras del Spinner de alimentos -->
+        <item>All</item>
+        <item>Carrot</item>
+        <item>Onion</item>
+        <item>Zucchini</item>
+        <item>Artichoke</item>
+        <item>Tomatoes</item>
+    </string-array>
+    <string-array name="pasta"> <!-- Array de los diferentes tipos de pastas del Spinner de alimentos -->
+        <item>All</item>
+        <item>Macaroni</item>
+        <item>Spaghetti</item>
+        <item>Lasagna</item>
+        <item>Noodles</item>
+        <item>Rice</item>
+        <item>Pizza</item>
+    </string-array>
+    <string-array name="postres"> <!-- Array de los diferentes tipos de postres del Spinner de alimentos -->
+        <item>All</item>
+        <item>Chocolate</item>
+        <item>Mango</item>
+    </string-array>
+
+    <!-- Arrays de los Spinners del fragment AVANZADAS -->
+    <string-array name="duracion"> <!-- Array de las duraciones disponibles del Spinner spDuracionAvanzadas -->
+
+        <item>No filter</item>
+        <item>20</item>
+        <item>30</item>
+        <item>60</item>
+        <item>90</item>
+        <item>120</item>
+    </string-array>
+    <string-array name="dificultad"> <!-- Array de las duraciones disponibles del Spinner spDificultadAvanzadas -->
+
+        <item>No filter</item>
+        <item>Easy</item>
+        <item>Medium</item>
+        <item>Hard</item>
+    </string-array>
+    <string-array name="zona"> <!-- Array de las duraciones disponibles del Spinner spZonaAvanzadas -->
+
+        <item>No filter</item>
+        <item>Oriental</item>
+        <item>South America</item>
+        <item>Mediterranean</item>
+        <item>African</item>
+        <item>Others</item>
+    </string-array>
+    <string-array name="alimento"> <!-- Array de las duraciones disponibles del Spinner spAlimentoAvanzadas -->
+
+        <item>No filter</item>
+        <item>Meat</item>
+        <item>Fish</item>
+        <item>Vegetal</item>
+        <item>Pasta</item>
+        <item>Desserts</item>
+    </string-array>
+
+    <string name="title_activity_tipo_receta">Type of recipe</string>
+    <string name="title_activity_lista_recetas">Recipe list</string>
+    <string name="title_activity_recipe_mode_selector">Recipe mode</string>
+    <string name="activity_recipe_mode_selector_layout">Recipe</string>
+
+    <!-- Strings RecipeMode -->
+    <string name="read_button">READ</string>
+    <string name="assistant_button">ASSISTANT</string>
+    <string name="difficulty">Difficulty:</string>
+    <string name="duration">Duration:</string>
+    <string name="votes">Votes:</string>
+    <string name="zone">Zona: </string>
+    <string name="demo_tuto">Tutorial</string>
+
+    <!-- Asistente -->
+    <string name="backButton">Previous</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="nextButton">Next</string>
+    <string name="byAlim">By aliment:</string>
+    <string name="byDif">By difficulty:</string>
+    <string name="byMin">Per minute (approx.):</string>
+    <string name="byTypeAlim">Food type:</string>
+    <string name="byZone">By location:</string>
+    <string name="duracion">Duration</string>
+    <string name="nacionalidad">Nationality</string>
+    <string name="proximamente">Coming Soon</string>
+    <string name="puntuacion">Score</string>
+    <string name="searchButton1">Search</string>
+    <string name="title">Title</string>
+    <string name="valorate">Rate</string>
+    <string name="perAli">By aliment</string>
+    <string name="perDif">By difficulty</string>
+    <string name="perDur">By duration</string>
+    <string name="perGeo">By geographic zone</string>
+
+</resources>

@@ -45,8 +45,8 @@ public class recipeModeSelector extends ActionBarActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_mode_selector);
-        final android.support.v7.app.ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        //final android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        //actionBar.setDisplayHomeAsUpEnabled(true);
 
         recipeName = (TextView) findViewById(R.id.recipeName);
         recipeImage = (ImageView) findViewById(R.id.recipeImage);
