@@ -1,17 +1,33 @@
 package dam2.sixapp.cookin.swipeTabs.userMain.filterTabsFragment;
 
+import android.os.AsyncTask;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
 import dam2.sixapp.cookin.R;
 import dam2.sixapp.cookin.customList.CustomListAdapter;
+import dam2.sixapp.cookin.customList.ListaPersonalizada;
 import dam2.sixapp.cookin.customList.NewsItem;
 
 /**
@@ -20,51 +36,86 @@ import dam2.sixapp.cookin.customList.NewsItem;
  */
 public class Cocinadas extends Fragment {
 
+    ArrayList<NewsItem> item = new ArrayList<NewsItem>();
+    ListView lv2;
 
-	@Override
+    @Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_cocinadas, container, false);
 
-        ArrayList image_details = getListData();
-        final ListView lv2 = (ListView) rootView.findViewById(R.id.custom_list_Cocinadas);
-        lv2.setAdapter(new CustomListAdapter(rootView.getContext(), image_details));
-        lv2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-            @Override
-            public void onItemClick(AdapterView<?> a, View v, int position, long id) {
-                Object o = lv2.getItemAtPosition(position);
-                //NewsItem newsData = (NewsItem) o;
-                //Toast.makeText(MainActivity.this, "Selected :" + " " + newsData, Toast.LENGTH_LONG).show();
-            }
+        lv2 = (ListView) rootView.findViewById(R.id.custom_list_Cocinadas);
 
-        });
+        mostrar m = new mostrar();
+        m.execute();
 
         return rootView;
     }
 
-    private ArrayList getListData() {
-        ArrayList results = new ArrayList();
-        NewsItem newsData = new NewsItem();
+    private class mostrar extends AsyncTask<String, Integer, Boolean> {
 
-        newsData = new NewsItem();
-        newsData.setTitle("Titulo");
-        newsData.setReputation(4.5);
-        newsData.setTime("Tiempo");
-        newsData.setNationality("Nacionalidad");
-        newsData.setImage(R.drawable.ic_launcher);
-        results.add(newsData);
+        @Override
+        protected Boolean doInBackground(String... params) {
+            boolean resul = true;
 
-        newsData = new NewsItem();
-        newsData.setTitle("Huevos fritos");
-        newsData.setReputation(0);
-        newsData.setTime("1 hora");
-        newsData.setNationality("Francesa");
-        newsData.setImage(R.drawable.ic_launcher);
-        results.add(newsData);
+            HttpClient httpClient = new DefaultHttpClient();
+            HttpPost del = new HttpPost("http://cookin.hol.es/android_connect/masacabadas.php");
 
-        return results;
+            del.setHeader("content-type", "application/json");
+
+            try {
+                HttpResponse resp = httpClient.execute(del);
+                String respStr = EntityUtils.toString(resp.getEntity());
+                JSONArray respJSON = new JSONArray(respStr);
+
+
+                for (int i = 0; i < 15; i++) {
+                    JSONObject obj = respJSON.getJSONObject(i);
+
+                    item.add(new NewsItem(obj.getString("NOMBRE"), obj.getString("DIFICULTAD"), obj.getString("IMAGEN")));
+
+
+                }
+            } catch (Exception ex) {
+                Log.e("ServicioRest", "Error!", ex);
+                resul = false;
+            }
+
+            return resul;
+
+        }
+
+        public void onPostExecute(Boolean result){
+        if(result){
+            lv2.setAdapter(new ListaPersonalizada(getActivity().getApplicationContext(),R.layout.list_row_layout,item) {
+                @Override
+                public void onEntrada(Object entrada, View view) {
+
+                    if (entrada != null) {
+
+                        TextView titulo = (TextView) view.findViewById(R.id.title);
+                        if (titulo != null) {
+                            titulo.setText(((NewsItem) entrada).getTitle());
+                        }
+
+
+                           ImageView img = (ImageView) view.findViewById(R.id.image);
+
+                       if(img != null){
+                            Picasso.with(getActivity().getApplicationContext()).load(((NewsItem) entrada).getImage()).into(img);
+
+                        }
+
+                        TextView desc = (TextView) view.findViewById(R.id.textViewDescription);
+                        if (desc != null) {
+                            desc.setText(((NewsItem) entrada).getDesc());
+                        }
+                    }//Fin IF
+                }
+            });
+        }
     }
-
+    }
 }

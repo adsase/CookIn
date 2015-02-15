@@ -22,9 +22,9 @@ public class FavoritesFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_fav, container, false);
 
-        ArrayList image_details = getListData();
+       // ArrayList image_details = getListData();
         final ListView lv1 = (ListView) rootView.findViewById(R.id.custom_list);
-        lv1.setAdapter(new CustomListAdapter(rootView.getContext(), image_details));
+        //lv1.setAdapter(new CustomListAdapter(rootView.getContext(), image_details));
         lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
@@ -39,27 +39,21 @@ public class FavoritesFragment extends Fragment {
         return rootView;
     }
 
-    private ArrayList getListData() {
+    /*private ArrayList getListData() {
         ArrayList results = new ArrayList();
         NewsItem newsData = new NewsItem();
 
         newsData = new NewsItem();
         newsData.setTitle("Titulo");
-        newsData.setReputation(4.5);
-        newsData.setTime("Tiempo");
-        newsData.setNationality("Nacionalidad");
         newsData.setImage(R.drawable.ic_launcher);
         results.add(newsData);
 
         newsData = new NewsItem();
         newsData.setTitle("Huevos fritos");
-        newsData.setReputation(0);
-        newsData.setTime("1 hora");
-        newsData.setNationality("Francesa");
         newsData.setImage(R.drawable.ic_launcher);
         results.add(newsData);
 
         return results;
-    }
+    }*/
 
 }

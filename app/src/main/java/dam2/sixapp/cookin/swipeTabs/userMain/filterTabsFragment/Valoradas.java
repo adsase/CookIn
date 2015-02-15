@@ -22,9 +22,9 @@ public class Valoradas extends android.support.v4.app.Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_valoradas, container, false);
 
-        ArrayList image_details = getListData();
+       // ArrayList image_details = getListData();
         final ListView lv3 = (ListView) rootView.findViewById(R.id.custom_list_Valoradasas);
-        lv3.setAdapter(new CustomListAdapter(rootView.getContext(), image_details));
+        //lv3.setAdapter(new CustomListAdapter(rootView.getContext(), image_details));
         lv3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
@@ -39,27 +39,21 @@ public class Valoradas extends android.support.v4.app.Fragment {
         return rootView;
     }
 
-    private ArrayList getListData() {
+   /* private ArrayList getListData() {
         ArrayList results = new ArrayList();
-        NewsItem newsData = new NewsItem();
+        NewsItem newsData;
 
         newsData = new NewsItem();
         newsData.setTitle("Titulo");
-        newsData.setReputation(4.5);
-        newsData.setTime("Tiempo");
-        newsData.setNationality("Nacionalidad");
         newsData.setImage(R.drawable.ic_launcher);
         results.add(newsData);
 
         newsData = new NewsItem();
         newsData.setTitle("Huevos fritos");
-        newsData.setReputation(0);
-        newsData.setTime("1 hora");
-        newsData.setNationality("Francesa");
         newsData.setImage(R.drawable.ic_launcher);
         results.add(newsData);
 
         return results;
-    }
+    }*/
 
 }

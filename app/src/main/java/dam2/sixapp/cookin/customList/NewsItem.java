@@ -2,11 +2,18 @@ package dam2.sixapp.cookin.customList;
 
 public class NewsItem {
 
-    private String title;
-    private double reputation;
-    private String time;
-    private String nationality;
-    private int image;
+
+    private static String title, desc, image;
+
+
+    public NewsItem(){}
+
+    public NewsItem(String title, String desc, String img) {
+        this.title = title;
+        this.desc = desc;
+        this.image = img;
+    }
+
 
     public String getTitle() {
         return title;
@@ -16,41 +23,27 @@ public class NewsItem {
         this.title = title;
     }
 
-    public String getNationality(){
-        return nationality;
+    public String getDesc() {
+        return desc;
     }
 
-    public void setNationality(String nationality){
-        this.nationality = nationality;
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 
-    public double getReputation() {
-        return reputation;
-    }
-
-    public void setReputation(double reputation) {
-        this.reputation = reputation;
-    }
-
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
-    }
-
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
-    @Override
-    public String toString() {
-        return "[ title=" + title + ", reputation=" +
-                reputation + " , time=" + time + ", image=" + image +"]";
-    }
+
+
+
+
+
+
+
 }

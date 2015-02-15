@@ -7,6 +7,8 @@
     <dimen name="navigation_drawer_width">240dp</dimen>
 
     <dimen name="title">17dp</dimen>
+    <dimen name="receta_de:">12dp</dimen>
+    <dimen name="descripcion">12dp</dimen>
     <dimen name="rating">15dip</dimen>
     <dimen name="nationality">15dip</dimen>
     <dimen name="time">15dip</dimen>

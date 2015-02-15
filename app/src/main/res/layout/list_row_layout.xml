@@ -39,6 +39,24 @@
                 android:layout_height="fill_parent">
 
                 <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Receta de:"
+                    android:id="@+id/textView15"
+                    android:paddingLeft="10dp"
+                    android:textStyle="bold|italic"
+                    android:textSize="@dimen/receta_de:" />
+
+                <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="175dp" />
+
+                <TextView
                     android:id="@+id/title"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
@@ -46,19 +64,25 @@
                     android:layout_toRightOf="@+id/image"
                     android:textSize="@dimen/title"
                     android:textStyle="bold"
+<<<<<<< Updated upstream
                     android:text="@string/title"
                     android:gravity="center"/>
+=======
+                    android:text="Titulo"
+                    android:paddingLeft="10dp"
+                    android:layout_marginBottom="2dp" />
+>>>>>>> Stashed changes
 
                 <View
                     android:layout_width="fill_parent"
                     android:layout_height="1dp"
                     android:background="@android:color/darker_gray"
-                    android:layout_below="@+id/title"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp" />
 
+<<<<<<< Updated upstream
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="fill_parent"
@@ -165,6 +189,16 @@
                             android:textStyle="bold"/>
                     </LinearLayout>
                 </LinearLayout>
+=======
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Descripcion"
+                    android:id="@+id/textViewDescription"
+                    android:textSize="@dimen/descripcion"
+                    android:paddingLeft="10dp"
+                    android:textStyle="italic" />
+>>>>>>> Stashed changes
 
             </LinearLayout>
 
