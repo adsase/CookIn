@@ -57,7 +57,7 @@ public class ListaRecetas extends ActionBarActivity implements AdapterView.OnIte
         list.setOnItemClickListener(this);
 
         url = ("http://cookin.hol.es/android_connect/filtros_avanzados.php?"+aliLink+"&"+duraLink+"&"+difiLink+"&"+zonaLink+"&"+tipoAliLink);//
-        Toast.makeText(getApplicationContext(), url, Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(), url, Toast.LENGTH_LONG).show();
 
         mostrar m = new mostrar();
         m.execute();

@@ -235,7 +235,18 @@ public class StepsActivity extends ActionBarActivity implements View.OnClickList
     public boolean voiceDetectorBack(ArrayList<String> arrayList, String data1) {
         for (String p : arrayList) {
             if (p.contains(data1)|p.contains(data1.toLowerCase())|p.contains(data1.toUpperCase())) {
+                Log.e("Back",p);
 
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean voiceDetectorPlayPause(ArrayList<String> arrayList, String data1) {
+        for (String p : arrayList) {
+            if (p.contains(data1)|p.contains(data1.toLowerCase())|p.contains(data1.toUpperCase())) {
+                Log.e("Pause/Start",p);
                 return true;
             }
         }
@@ -245,7 +256,7 @@ public class StepsActivity extends ActionBarActivity implements View.OnClickList
     public boolean voiceDetectorNext(ArrayList<String> arrayList, String data1) {
         for (String p : arrayList) {
             if (p.contains(data1)|p.contains(data1.toLowerCase())|p.contains(data1.toUpperCase())) {
-
+                Log.e("Next",p);
                 return true;
             }
         }
@@ -262,7 +273,6 @@ public class StepsActivity extends ActionBarActivity implements View.OnClickList
             String [ ] palabras = suggestedWords.get(0).toString().split(" ");
             if(voiceDetectorBack(suggestedWords,"Anterior")){
                 if(actualStep>0) {
-                    if(pauseButton.getText().toString().compareTo(getResources().getString(R.string.stop).toString())==0) {
                         actualStep--;
                         pasoReceta.setText(recipeNum[actualStep] + ". " + steps[actualStep]);
                         changed = true;
@@ -270,12 +280,22 @@ public class StepsActivity extends ActionBarActivity implements View.OnClickList
                         if (pauseButton.getText().toString().compareTo(getResources().getString(R.string.start).toString()) == 0) {
                             pauseButton.setText(getResources().getString(R.string.stop).toString());
                         }
-                    }
+                }else{
+                    pauseButton.setText(getResources().getString(R.string.start).toString());
                 }
+            }else{
+                pauseButton.setText(getResources().getString(R.string.start).toString());
             }
+
+            if(voiceDetectorPlayPause(suggestedWords,"Parar")){
+                    pauseButton.setText(getResources().getString(R.string.start).toString());
+                    repeatTTS.stop();
+            }else{
+                pauseButton.setText(getResources().getString(R.string.start).toString());
+            }
+
             if(voiceDetectorNext(suggestedWords,"Siguiente")){
                 if(actualStep<steps.length-1) {
-                    if(pauseButton.getText().toString().compareTo(getResources().getString(R.string.stop).toString())==0) {
                         actualStep++;
                         pasoReceta.setText(recipeNum[actualStep] + ". " + steps[actualStep]);
                         changed = true;
@@ -283,8 +303,11 @@ public class StepsActivity extends ActionBarActivity implements View.OnClickList
                         if (pauseButton.getText().toString().compareTo(getResources().getString(R.string.start).toString()) == 0) {
                             pauseButton.setText(R.string.stop);
                         }
-                    }
+                }else{
+                    pauseButton.setText(getResources().getString(R.string.start).toString());
                 }
+            }else{
+                pauseButton.setText(getResources().getString(R.string.start).toString());
             }
             //set the retrieved list to display in the ListView using an ArrayAdapter
             //wordList.setAdapter(new ArrayAdapter<String> (this, R.layout.word, suggestedWords));
@@ -320,7 +343,7 @@ public class StepsActivity extends ActionBarActivity implements View.OnClickList
         //indicate package
         listenIntent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, getClass().getPackage().getName());
         //message to display while listening
-        listenIntent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Di: Atras, Empezar o Adelante");
+        listenIntent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Di: Anterior, Parar o Siguiente");
         //set speech model
         listenIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
         //specify number of results to retrieve
@@ -335,7 +358,7 @@ public class StepsActivity extends ActionBarActivity implements View.OnClickList
             HashMap<String, String> myHashAlarm = new HashMap<String, String>();
             myHashAlarm.put(TextToSpeech.Engine.KEY_PARAM_STREAM, String.valueOf(AudioManager.STREAM_ALARM));
             myHashAlarm.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, "SOME MESSAGE");
-            repeatTTS.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+            repeatTTS.speak(text, TextToSpeech.QUEUE_FLUSH, myHashAlarm);
         }
     }
 }
