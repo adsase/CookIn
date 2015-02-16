@@ -1,5 +1,6 @@
 package dam2.sixapp.cookin.swipeTabs.userMain.filterTabsFragment;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -29,15 +30,18 @@ import dam2.sixapp.cookin.R;
 import dam2.sixapp.cookin.customList.CustomListAdapter;
 import dam2.sixapp.cookin.customList.ListaPersonalizada;
 import dam2.sixapp.cookin.customList.NewsItem;
+import dam2.sixapp.cookin.recipes.recipeModeSelector;
 
 /**
  * A simple {@link android.app.Fragment} subclass.
  *
  */
-public class Cocinadas extends Fragment {
+public class Cocinadas extends Fragment implements AdapterView.OnItemClickListener{
 
     ArrayList<NewsItem> item = new ArrayList<NewsItem>();
     ListView lv2;
+    int id;
+    private int[] arrayid;
 
     @Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -47,11 +51,27 @@ public class Cocinadas extends Fragment {
 
 
         lv2 = (ListView) rootView.findViewById(R.id.custom_list_Cocinadas);
+        lv2.setOnItemClickListener(this);
 
         mostrar m = new mostrar();
         m.execute();
 
         return rootView;
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        float x= lv2.getItemIdAtPosition(position);
+        int index =Math.round(x);
+        int idrec=arrayid[index];
+
+        //Toast.makeText(getApplicationContext(),"ID: "+idrec,Toast.LENGTH_SHORT).show();
+
+        Intent i = new Intent(getActivity().getApplicationContext(),recipeModeSelector.class);
+
+        i.putExtra("id", idrec);
+
+        startActivity(i);
     }
 
     private class mostrar extends AsyncTask<String, Integer, Boolean> {
@@ -69,14 +89,16 @@ public class Cocinadas extends Fragment {
                 HttpResponse resp = httpClient.execute(del);
                 String respStr = EntityUtils.toString(resp.getEntity());
                 JSONArray respJSON = new JSONArray(respStr);
+                arrayid = new int[respJSON.length()];
+                item.clear();
 
 
-                for (int i = 0; i < 15; i++) {
+                for (int i = 0; i < 1; i++) {
                     JSONObject obj = respJSON.getJSONObject(i);
 
                     item.add(new NewsItem(obj.getString("NOMBRE"), obj.getString("DIFICULTAD"), obj.getString("IMAGEN")));
-
-
+                    id = obj.getInt("IDRECETAS");
+                    arrayid[i] = id;
                 }
             } catch (Exception ex) {
                 Log.e("ServicioRest", "Error!", ex);
@@ -108,10 +130,10 @@ public class Cocinadas extends Fragment {
 
                         }
 
-                        TextView desc = (TextView) view.findViewById(R.id.textViewDescription);
+                       /* TextView desc = (TextView) view.findViewById(R.id.textViewDescription);
                         if (desc != null) {
                             desc.setText(((NewsItem) entrada).getDesc());
-                        }
+                        }*/
                     }//Fin IF
                 }
             });

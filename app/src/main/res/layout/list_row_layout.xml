@@ -109,7 +109,7 @@
                             android:layout_alignParentRight="true"
                             android:layout_marginTop="5dip"
                             android:textSize="@dimen/time"
-                            android:text="@string/duracion"
+                            android:text="30 min"
                             android:gravity="center"
                             android:textStyle="bold"/>
 
@@ -146,7 +146,7 @@
                             android:layout_marginTop="5dip"
                             android:layout_toRightOf="@+id/image"
                             android:textSize="@dimen/rating"
-                            android:text="@string/puntuacion"
+                            android:text="3.5"
                             android:gravity="center"
                             android:textStyle="bold"/>
                     </LinearLayout>
@@ -182,7 +182,7 @@
                             android:layout_marginTop="5dp"
                             android:layout_toRightOf="@+id/image"
                             android:textSize="@dimen/nationality"
-                            android:text="@string/nacionalidad"
+                            android:text="Sudamérica"
                             android:gravity="center"
                             android:textStyle="bold"/>
                     </LinearLayout>
